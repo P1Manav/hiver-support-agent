@@ -27,7 +27,13 @@ logger = logging.getLogger(__name__)
 # ── Regex Patterns ────────────────────────────────────────────────────────────
 
 _PATTERNS = {
-    # Twitter handles — @username
+    # Email addresses — MUST come before handle to avoid eating the @ in emails
+    "email": re.compile(r"\b[A-Za-z0-9._%+\-]+@[A-Za-z0-9.\-]+\.[A-Za-z]{2,}\b"),
+
+    # URLs (http/https) — before handles to catch embedded params
+    "url": re.compile(r"https?://\S+", re.IGNORECASE),
+
+    # Twitter handles — @username (after email so emails are caught first)
     "handle": re.compile(r"@[A-Za-z0-9_]{1,50}", re.IGNORECASE),
 
     # Amazon-style order IDs: 3-digit-7digit-7digit (e.g., 113-1234567-1234567)
@@ -47,12 +53,6 @@ _PATTERNS = {
 
     # Long digit strings that look like account/order numbers (10+ digits)
     "digit_string": re.compile(r"\b\d{10,}\b"),
-
-    # Email addresses
-    "email": re.compile(r"\b[A-Za-z0-9._%+\-]+@[A-Za-z0-9.\-]+\.[A-Za-z]{2,}\b"),
-
-    # URLs (http/https)
-    "url": re.compile(r"https?://\S+", re.IGNORECASE),
 
     # Credit card patterns (16 digits, possibly spaced/dashed)
     "credit_card": re.compile(r"\b(?:\d{4}[-\s]?){3}\d{4}\b"),
