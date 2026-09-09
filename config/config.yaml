@@ -1,0 +1,103 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# config/config.yaml  — All tunable parameters for the Hiver support agent
+# Edit this file to change brand, model, or threshold settings.
+# ─────────────────────────────────────────────────────────────────────────────
+
+# ── Data ─────────────────────────────────────────────────────────────────────
+data:
+  brand: "AmazonHelp"           # Twitter handle (no @)
+  sample_size: 50000            # Number of tweets to process (use null for all)
+  random_seed: 42
+  kaggle_dataset: "thoughtvector/customer-support-on-twitter"
+  raw_dir: "data/raw"
+  processed_dir: "data/processed"
+  golden_dir: "golden"
+  min_thread_length: 2          # Minimum turns to keep a thread
+
+# ── Embedding ─────────────────────────────────────────────────────────────────
+embedding:
+  model: "sentence-transformers/all-MiniLM-L6-v2"
+  batch_size: 256               # Increase if you have more RAM
+  device: "cpu"                 # "cpu" or "cuda"
+
+# ── Clustering (intent derivation) ───────────────────────────────────────────
+clustering:
+  method: "kmeans"              # "kmeans" or "hdbscan"
+  n_clusters: 12                # For kmeans; ignored for hdbscan
+  hdbscan_min_cluster_size: 50  # For hdbscan only
+  n_sample_for_clustering: 5000 # Subsample for clustering (speed)
+
+# ── Intent taxonomy ───────────────────────────────────────────────────────────
+taxonomy:
+  file: "config/intent_taxonomy.yaml"
+
+# ── Weak supervision (LLM labeling) ──────────────────────────────────────────
+weak_supervision:
+  n_samples: 10000              # Number of messages to label via LLM
+  batch_size: 20                # Messages per Ollama request
+  output_file: "data/processed/labeled_training.csv"
+  model: "llama3.1:8b-instruct-q4_K_M"  # Ollama model for labeling
+  temperature: 0.0              # 0 = deterministic labels
+
+# ── Classifier ────────────────────────────────────────────────────────────────
+classifier:
+  base_model: "distilbert-base-uncased"
+  model_dir: "models/classifier"
+  max_length: 128
+  num_epochs: 4
+  batch_size: 32                # Training batch (Colab T4)
+  learning_rate: 2.0e-5
+  eval_split: 0.1
+
+# ── Retrieval (FAISS) ─────────────────────────────────────────────────────────
+retrieval:
+  index_dir: "faiss_index"
+  top_k: 5                      # Retrieved precedents per query
+  min_resolved_turns: 2         # Thread must have ≥ this turns to be indexed
+
+# ── Generation ────────────────────────────────────────────────────────────────
+generation:
+  model: "llama3.1:8b-instruct-q4_K_M"    # Ollama model (default: quality)
+  fast_model: "phi3.5:3.8b-mini-instruct-q4_K_M"  # Fast-iter swap
+  temperature: 0.3
+  max_tokens: 256
+  ollama_host: "http://localhost:11434"
+
+# ── Escalation gate ───────────────────────────────────────────────────────────
+escalation:
+  confidence_threshold: 0.70    # Below this → escalate
+  similarity_threshold: 0.60    # Below this → escalate (no good precedent)
+  sentiment_urgency_threshold: 0.80  # Above this → escalate (very negative)
+  # Intents that always escalate regardless of confidence
+  denylist:
+    - "billing_payment"
+    - "account_access"
+    - "seller_complaint"
+
+# ── Evaluation ────────────────────────────────────────────────────────────────
+evaluation:
+  judge_model: "qwen2.5:7b-instruct-q4_K_M"  # Ollama judge (≠ generator)
+  judge_temperature: 0.0
+  golden_set_path: "golden/golden_set.csv"
+  # Scoring dimensions (each 1–5)
+  judge_dimensions:
+    - "correctness"
+    - "tone"
+    - "groundedness"
+    - "conciseness"
+
+# ── Golden set sampling ───────────────────────────────────────────────────────
+golden_set:
+  target_size: 200              # Total examples
+  per_intent: 15                # Minimum per intent (stratified)
+  edge_case_fraction: 0.20      # 20% edge cases (ambiguous, short, multi-intent)
+  output_file: "golden/golden_set.csv"
+
+# ── Guardrails ────────────────────────────────────────────────────────────────
+guardrails:
+  # Patterns in draft replies that must be grounded in retrieved context
+  unverifiable_patterns:
+    - '\d+\s*(?:business\s*)?days?'           # "within 3 business days"
+    - '\$\d+(?:\.\d{2})?'                     # "$25.00"
+    - '\d+%\s*(?:refund|discount|off)'        # "50% refund"
+    - '(?:policy|guarantee|warranty)\s+\w+'  # "policy allows..."

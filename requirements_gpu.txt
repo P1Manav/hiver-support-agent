@@ -1,0 +1,19 @@
+# GPU-only dependencies for Colab/Kaggle (T4 GPU)
+# Install with: pip install -r requirements_gpu.txt
+# Run AFTER requirements.txt
+
+# ── PyTorch with CUDA ─────────────────────────────────────────────────────────
+# On Colab, torch+cuda is pre-installed. Uncomment if running on a fresh environment:
+# torch>=2.2.0
+# torchvision>=0.17.0
+
+# ── FAISS GPU (optional upgrade from faiss-cpu) ───────────────────────────────
+faiss-gpu>=1.8.0            # Replaces faiss-cpu for GPU-accelerated indexing
+
+# ── HuggingFace Trainer extras ────────────────────────────────────────────────
+accelerate>=0.29.0          # Required for HF Trainer on multi-GPU / Colab
+evaluate>=0.4.0             # HF evaluate library for F1, accuracy metrics
+bitsandbytes>=0.43.0        # Optional: 8-bit quantization for fine-tuning
+
+# ── Inference with vLLM (alternative to Ollama on Colab T4) ──────────────────
+# vllm>=0.4.0               # Uncomment if you want vLLM instead of Ollama on Colab

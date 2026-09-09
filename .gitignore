@@ -1,0 +1,49 @@
+# ── Data ──────────────────────────────────────────────────────────────────────
+data/raw/
+data/processed/
+*.csv
+*.json
+*.parquet
+!golden/*.csv         # keep the golden set committed
+!config/*.yaml        # keep config files committed
+
+# ── Model weights / indices ───────────────────────────────────────────────────
+models/
+*.bin
+*.pt
+*.safetensors
+*.gguf
+faiss_index/
+
+# ── Python ────────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# ── Jupyter ───────────────────────────────────────────────────────────────────
+.ipynb_checkpoints/
+*.nbconvert.*
+
+# ── Secrets / credentials ─────────────────────────────────────────────────────
+.env
+*.env
+kaggle.json
+secrets/
+
+# ── OS artefacts ──────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+
+# ── IDEs ──────────────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp

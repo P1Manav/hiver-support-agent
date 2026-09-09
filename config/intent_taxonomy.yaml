@@ -1,0 +1,114 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# config/intent_taxonomy.yaml
+# Edit intent names, descriptions, and examples after inspecting clusters.
+# This file is the single source of truth for the intent taxonomy.
+# ─────────────────────────────────────────────────────────────────────────────
+
+intents:
+
+  - name: order_status_inquiry
+    description: >
+      Customer asking about the status or location of an existing order.
+      Includes "where is my package", tracking number requests, estimated
+      delivery questions, and delayed shipment complaints.
+    keywords: [order, package, tracking, arrived, shipped, delivery, status, where]
+    examples:
+      - "where is my order? it's been 2 weeks"
+      - "can you give me a tracking number for my shipment"
+      - "my estimated delivery was yesterday but nothing arrived"
+
+  - name: delivery_problem
+    description: >
+      Issues with a delivery that has already occurred — damaged item, wrong
+      item received, item missing from package, or package marked delivered
+      but not received.
+    keywords: [damaged, broken, wrong, missing, lost, received, delivered]
+    examples:
+      - "I received a completely different product than what I ordered"
+      - "my package was marked delivered but it's not here"
+      - "the item arrived smashed"
+
+  - name: return_refund
+    description: >
+      Customer requesting a return, refund, exchange, or credit.
+      Includes questions about return windows, return shipping labels,
+      and refund status.
+    keywords: [return, refund, exchange, credit, money back, send back]
+    examples:
+      - "I want to return this item and get a refund"
+      - "how do I get a prepaid return label"
+      - "when will my refund appear on my card"
+
+  - name: billing_payment
+    description: >
+      Incorrect charges, double billing, payment failures, price disputes,
+      or promotional credit issues. HIGH-RISK — always escalate.
+    keywords: [charged, charge, bill, payment, price, overcharged, invoice, credit card]
+    escalation_denylist: true
+    examples:
+      - "I was charged twice for the same order"
+      - "my promo code discount wasn't applied"
+      - "there's an unauthorized charge on my card"
+
+  - name: account_access
+    description: >
+      Login failures, password resets, account locked/suspended/hacked,
+      two-factor authentication issues. HIGH-RISK — always escalate.
+    keywords: [login, password, account, locked, hacked, access, suspended, 2fa]
+    escalation_denylist: true
+    examples:
+      - "I can't log into my account"
+      - "my account has been hacked"
+      - "I'm not receiving my verification code"
+
+  - name: product_quality
+    description: >
+      Item is defective, not as described, counterfeit, or of poor quality.
+      Distinct from delivery_problem (item arrived but has a quality issue).
+    keywords: [defective, broken, fake, counterfeit, quality, not working, description]
+    examples:
+      - "this product stopped working after one day"
+      - "the item doesn't match the description at all"
+      - "I think I received a counterfeit product"
+
+  - name: subscription_prime
+    description: >
+      Amazon Prime or other subscription issues — accidental renewal,
+      cancellation requests, billing questions, or benefit access problems.
+    keywords: [prime, subscription, membership, renew, cancel, benefit, streaming]
+    examples:
+      - "I accidentally renewed Prime and want a refund"
+      - "how do I cancel my Prime membership"
+      - "I can't access Prime Video even though I'm subscribed"
+
+  - name: seller_complaint
+    description: >
+      Issues with a third-party marketplace seller — fraud, non-response,
+      listing misrepresentation, or seller-side return refusals.
+      HIGH-RISK — always escalate.
+    keywords: [seller, third party, marketplace, fraud, scam, listing]
+    escalation_denylist: true
+    examples:
+      - "the seller won't respond to my messages"
+      - "I think this seller is selling fake products"
+      - "the seller refused my return"
+
+  - name: app_technical
+    description: >
+      Amazon app or website technical issues — crashes, errors, search
+      problems, checkout failures, or app not loading.
+    keywords: [app, website, error, crash, loading, bug, checkout, search]
+    examples:
+      - "the Amazon app keeps crashing on my phone"
+      - "I'm getting an error when I try to checkout"
+      - "the website won't load for me"
+
+  - name: compliment_feedback
+    description: >
+      Positive feedback, praise, or general non-complaint communication.
+      Low priority for escalation.
+    keywords: [thank, great, excellent, love, amazing, wonderful, feedback]
+    examples:
+      - "just wanted to say your customer service was amazing"
+      - "the driver went above and beyond"
+      - "very happy with my purchase"
