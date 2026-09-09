@@ -24,12 +24,7 @@ from typing import Optional
 
 import ollama
 
-from .prompts_judge import judge_prompt  # imported directly for clarity
-
 logger = logging.getLogger(__name__)
-
-# Re-export so callers can use judge.py directly
-from src.generation.prompts import judge_prompt  # noqa: F811
 
 
 class LLMJudge:
