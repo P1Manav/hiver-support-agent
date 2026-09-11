@@ -86,9 +86,9 @@ Given the *Customer Support on Twitter* dataset (Kaggle: `thoughtvector/customer
 | Judge Score — Tone (avg/5) | 3.70/5 |
 | Judge Score — Groundedness (avg/5) | 2.96/5 |
 | Judge Score — Conciseness (avg/5) | 3.10/5 |
-| Escalation Rate | N/A |
-| Escalation Precision (human-verified) | N/A |
-| Judge–Human Cohen's κ | N/A |
+| Escalation Rate | 99.5% |
+| Escalation Precision (human-verified) | 0.623 |
+| Judge–Human Cohen's κ | N/A (Insufficient sample) |
 
 ---
 
@@ -154,9 +154,11 @@ Here is why you should be skeptical of it:
 
 3. **Groundedness ROUGE-L is Expectedly Near Zero**: The near-zero ROUGE-L score (0.0019) is not a bug. The metric computes lexical overlap between the historical human-written reply (the reference) and the LLM's generated draft. Because the LLM synthesizes entirely novel text adapted to the specific user query, verbatim overlap with the old template is almost zero. This metric proves the generative model is doing heavy rewriting rather than copy-pasting, but makes ROUGE-L a poor absolute measure of "groundedness."
 
-4. **Optimal Threshold Degeneration**: The `optimal_threshold` target of 90% precision cannot be reached by the current classifier (max confidence is 0.87). Rather than lowering the target to artificially boost auto-handling, the threshold defaults to a highly conservative 0.90, meaning almost nothing is auto-handled. Under the current classifier quality, safe auto-handling is very limited.
+4. **Optimal Threshold Degeneration**: The `optimal_threshold` target of 90% precision cannot be reached by the current classifier (max confidence is 0.87). Rather than lowering the target to artificially boost auto-handling, the threshold defaults to a highly conservative 0.90, meaning almost nothing is auto-handled (99.5% of queries are escalated). However, this yields a highly safe gate: **Escalation Recall is 99.2%** (it successfully escalates 124 out of the 125 items the human evaluator said *should* be escalated). The trade-off is low Escalation Precision (62.3%), meaning it over-escalates 75 items that could have been safely auto-handled.
 
-5. **The taxonomy was derived from the data** — we defined the intents by clustering the same corpus we evaluated on. A truly independent evaluator might define the taxonomy differently, making comparisons to other systems difficult.
+5. **Judge–Human Agreement (Cohen's κ) is Undefined**: Because the live system's escalation gate is so conservative, 198 out of 200 items in the golden set were escalated and generated no draft reply. The human evaluator only had 2 auto-handled drafts to score, rendering Cohen's κ statistically impossible to compute. The LLM judge's standalone reliability remains unverified.
+
+6. **The taxonomy was derived from the data** — we defined the intents by clustering the same corpus we evaluated on. A truly independent evaluator might define the taxonomy differently, making comparisons to other systems difficult.
 
 ---
 

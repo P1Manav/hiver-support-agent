@@ -1,61 +1,61 @@
-thread_id,customer_text,predicted_intent,confidence,top_similarity,word_count,is_edge,human_intent,notes,human_judge_score
-475118,"[USER] you've kindly sent me this card, but there's no way to redeem it in my account [URL]",billing_payment,0.2536531388759613,1.0000001192092896,18,True,billing_payment,,
-2885740,[USER] not receiving the verification code to buy a gift how do I go about opening my account to complete,account_access,0.5006805658340454,1.0,20,False,account_access,,
-439748,"[USER]: Love love your App. I'm a Prime member &amp; Only shop from Amazon. One request- please have better cashback offers, esp on MacBooks.",compliment_feedback,0.3225092589855194,1.000000238418579,24,True,compliment_feedback,,
-2791848,[USER] hey are you able to help with a problem,app_technical,0.41585907340049744,1.000000238418579,10,False,app_technical,,
-326324,Dear [USER] when will #themaninthehighcastle season 2 be available on Prime? Just finished season 1. Can't wait!,subscription_prime,0.6853438019752502,1.0,17,False,compliment_feedback,,
-704280,"Hi [USER], Amazon Video won't play on Panasonic Smart TV - just flicks back to main channels. Please can you help? [USER]",app_technical,0.464261531829834,0.9999998807907104,22,False,app_technical,,
-2571337,[USER] I sent u private message yesterday.  Can u resolve the a-z harm to me from the repeated fraud perpetrated on your platform?,account_access,0.3133479058742523,1.0,23,True,seller_complaint,,
-1253288,"[USER] And they call themselves to be the best customer oriented. All their cust service agents do, copy and paste the emails. Frustrated [URL]",seller_complaint,0.34056001901626587,0.9999998807907104,24,True,seller_complaint,,
-1582934,[USER] [USER] so much for same day delivery then. [URL],delivery_problem,0.29623129963874817,1.0,10,True,delivery_problem,,
-2290514,[USER] Just tried out your Prime Music Desktop app for a bit. That thing is awesome!,app_technical,0.33515340089797974,1.0000003576278687,16,True,compliment_feedback,,
-206973,"Watched the [USER] try to shove an [USER] package in my mailbox yesterday. By the time I beshoed, she had gone with it - marked delivered.",delivery_problem,0.7780628800392151,0.9999998211860657,26,False,delivery_problem,,
-51581,[USER] I ordered something on oct 27 with amazon prime said it be late but would ship Oct 30 and be here today. Now it says November 8th,order_status_inquiry,0.7678292989730835,1.000000238418579,28,False,order_status_inquiry,,
-2391897,[USER] Reply to my dm please,account_access,0.3704470098018646,1.000000238418579,6,True,app_technical,,
-1748164,[USER] Take it as a feedback! You have the most idiot carrier - [USER] - I have ever seen in my life!!!,compliment_feedback,0.694235622882843,1.0,22,False,seller_complaint,,
-613988,"Maldita suerte, compre un monitor..llego jodido. [USER] :(",compliment_feedback,0.5264263153076172,0.9999996423721313,8,True,delivery_problem,,
+thread_id,customer_text,predicted_intent,confidence,top_similarity,word_count,is_edge,human_intent,notes,human_judge_score,human_escalate
+475118,"[USER] you've kindly sent me this card, but there's no way to redeem it in my account [URL]",billing_payment,0.2536531388759613,0.775795042514801,18,True,billing_payment,,N/A,escalate
+2885740,[USER] not receiving the verification code to buy a gift how do I go about opening my account to complete,account_access,0.5006805658340454,0.7534366846084595,20,False,account_access,,N/A,escalate
+439748,"[USER]: Love love your App. I'm a Prime member &amp; Only shop from Amazon. One request- please have better cashback offers, esp on MacBooks.",compliment_feedback,0.3225092589855194,0.6646089553833008,24,True,compliment_feedback,,N/A,auto_handle
+2791848,[USER] hey are you able to help with a problem,app_technical,0.4158590734004974,0.904903531074524,10,False,app_technical,,N/A,escalate
+326324,Dear [USER] when will #themaninthehighcastle season 2 be available on Prime? Just finished season 1. Can't wait!,subscription_prime,0.6853438019752502,0.6495581865310669,17,False,compliment_feedback,,N/A,auto_handle
+704280,"Hi [USER], Amazon Video won't play on Panasonic Smart TV - just flicks back to main channels. Please can you help? [USER]",app_technical,0.464261531829834,0.7674340009689331,22,False,app_technical,,N/A,escalate
+2571337,[USER] I sent u private message yesterday.  Can u resolve the a-z harm to me from the repeated fraud perpetrated on your platform?,account_access,0.3133479058742523,0.6774121522903442,23,True,seller_complaint,,N/A,escalate
+1253288,"[USER] And they call themselves to be the best customer oriented. All their cust service agents do, copy and paste the emails. Frustrated [URL]",seller_complaint,0.3405600190162658,0.742058277130127,24,True,seller_complaint,,N/A,escalate
+1582934,[USER] [USER] so much for same day delivery then. [URL],delivery_problem,0.2962312996387481,0.8702679872512817,10,True,delivery_problem,,N/A,escalate
+2290514,[USER] Just tried out your Prime Music Desktop app for a bit. That thing is awesome!,app_technical,0.3351534008979797,0.7454594969749451,16,True,compliment_feedback,,N/A,auto_handle
+206973,"Watched the [USER] try to shove an [USER] package in my mailbox yesterday. By the time I beshoed, she had gone with it - marked delivered.",delivery_problem,0.7780628800392151,0.7676377296447754,26,False,delivery_problem,,N/A,escalate
+51581,[USER] I ordered something on oct 27 with amazon prime said it be late but would ship Oct 30 and be here today. Now it says November 8th,order_status_inquiry,0.7678292989730835,0.8082881569862366,28,False,order_status_inquiry,,N/A,auto_handle
+2391897,[USER] Reply to my dm please,account_access,0.3704470098018646,0.9374505281448364,6,True,app_technical,,N/A,escalate
+1748164,[USER] Take it as a feedback! You have the most idiot carrier - [USER] - I have ever seen in my life!!!,compliment_feedback,0.694235622882843,0.7049245834350586,22,False,seller_complaint,,N/A,escalate
+613988,"Maldita suerte, compre un monitor..llego jodido. [USER] :(",compliment_feedback,0.5264263153076172,0.6867387294769287,8,True,delivery_problem,,N/A,escalate
 874493,"been waiting for this Amazon package for 3 days, delivery guy came, knocked once &amp; ran back to his car
 
-what the fuck?",delivery_problem,0.562445878982544,0.9999998807907104,23,False,delivery_problem,,
-1041631,[USER] I am getting non help on the phone. Please help,account_access,0.6020132899284363,0.9999999403953552,11,False,seller_complaint,,
-2379801,"[USER] [USER] buggy app experience. Can't update commute, can't find local skills ([USER] or [USER]). What's going on?",app_technical,0.5523701906204224,1.0000001192092896,18,False,app_technical,,
-633675,"[USER] simple question. Placed 2 orders of CDs with amazon uk and it. Uk order has already been delivered, it order is yet to be packaged. How is this possible?",order_status_inquiry,0.7766767144203186,0.9999999403953552,30,False,order_status_inquiry,,
-779881,"several calls were made to ur useless customer care service, all in vain! #Shame Give me whats mine [USER] Order# [ORDER_ID]",seller_complaint,0.27625417709350586,1.0,21,True,return_refund,,
-226133,[USER] shipment in the way how to cancel????,order_status_inquiry,0.6925766468048096,1.0000001192092896,8,True,return_refund,,
-488659,"Hey, [USER], your crazy help system requires me to post a public tweet saying I have a problem so that I can post a URL to your web form to get help. So here it is. Look at your DMs for all the details.",account_access,0.46719256043434143,1.0000003576278687,44,False,seller_complaint,,
-181071,Getting really pissed off w/ [USER] Charged me £308 on Friday 'in error' Still waiting for refund [ORDER_ID] several phonecalls,return_refund,0.4085237681865692,1.0000001192092896,20,True,return_refund,,
-918239,[USER] How do I actually buy this for Kindle? [URL],product_quality,0.24481138586997986,1.0000001192092896,10,True,app_technical,,
-320071,[USER] and [USER] your Alexa integration has a glitch and only plays one song at a time🤔 any thoughts? Setting??#thanks,app_technical,0.446655809879303,1.0,20,False,app_technical,,
-2586296,Can someone tell me how [USER]  prime shipping is getting me Ultra Moon on Tuesday :/,subscription_prime,0.7034107446670532,1.0,16,False,subscription_prime,,
-595725,[USER] driving down the highway and seeing a driver hauling your packages are just allowing them to fly out of the tail gate of his truck on the highway driving 75 almost 80 mph and the amazon driver didnt care,delivery_problem,0.767411470413208,1.0,40,False,seller_complaint,,
-1201907,[USER] I received my shipment but delivery status says its lost USPS ID:936128__credit_card__ Thank you [URL],order_status_inquiry,0.5245406031608582,1.0,16,False,delivery_problem,,
-874633,[USER] [ORDER_ID]. Product already pick up. But account details doesn't show about return. Because of that I can't able to,return_refund,0.3832748234272003,0.9999998807907104,20,False,return_refund,,
-2940239,[USER] AMZ Logistics fails to deliver on time. Can I request that my orders be shipped by another carrier?,order_status_inquiry,0.7058094143867493,0.9999999403953552,19,False,order_status_inquiry,,
-103080,[USER] my friend has had money taken out of her bank and she hasn't bought anything and isn't signed up for anything [USER],billing_payment,0.314072847366333,1.000000238418579,23,True,billing_payment,,
-2378254,[USER]  founder of  Amazon  will kindly  intervene  to refund the amount paid by me for the mob one plus 5 on 27/10/17 from Amazon.  I have exhausted my patience and no one is  helping  in amazon  despite my best follow up by mails and calls.,billing_payment,0.32059386372566223,0.9999998211860657,45,True,return_refund,,
-868091,[USER] why is it so hard to change my payment to the gift card option at checkout?,billing_payment,0.5253984332084656,1.0000003576278687,17,False,billing_payment,,
-2935866,[USER] [URL],compliment_feedback,0.5578781366348267,1.0000001192092896,2,True,order_status_inquiry,,
-389329,[USER] [USER] ur claim for order is granted...what does this statement means and also when will i get my product return..,return_refund,0.485134094953537,1.000000238418579,21,False,return_refund,,
-259930,"Hey [USER]. Do not use [USER] for 1-Day LA shipping. Their reputation is horrendous. Due to ineptness, might have to cancel order",seller_complaint,0.32800501585006714,1.000000238418579,22,True,seller_complaint,,
+what the fuck?",delivery_problem,0.562445878982544,0.7250573635101318,23,False,delivery_problem,,N/A,escalate
+1041631,[USER] I am getting non help on the phone. Please help,account_access,0.6020132899284363,0.8178101778030396,11,False,seller_complaint,,N/A,escalate
+2379801,"[USER] [USER] buggy app experience. Can't update commute, can't find local skills ([USER] or [USER]). What's going on?",app_technical,0.5523701906204224,0.7264838218688965,18,False,app_technical,,N/A,auto_handle
+633675,"[USER] simple question. Placed 2 orders of CDs with amazon uk and it. Uk order has already been delivered, it order is yet to be packaged. How is this possible?",order_status_inquiry,0.7766767144203186,0.6516250371932983,30,False,order_status_inquiry,,5,escalate
+779881,"several calls were made to ur useless customer care service, all in vain! #Shame Give me whats mine [USER] Order# [ORDER_ID]",seller_complaint,0.2762541770935058,0.8186779022216797,21,True,return_refund,,N/A,escalate
+226133,[USER] shipment in the way how to cancel????,order_status_inquiry,0.6925766468048096,0.7727838754653931,8,True,return_refund,,N/A,escalate
+488659,"Hey, [USER], your crazy help system requires me to post a public tweet saying I have a problem so that I can post a URL to your web form to get help. So here it is. Look at your DMs for all the details.",account_access,0.4671925604343414,0.618756115436554,44,False,seller_complaint,,N/A,escalate
+181071,Getting really pissed off w/ [USER] Charged me £308 on Friday 'in error' Still waiting for refund [ORDER_ID] several phonecalls,return_refund,0.4085237681865692,0.754402756690979,20,True,return_refund,,N/A,escalate
+918239,[USER] How do I actually buy this for Kindle? [URL],product_quality,0.2448113858699798,0.7955724000930786,10,True,app_technical,,N/A,auto_handle
+320071,[USER] and [USER] your Alexa integration has a glitch and only plays one song at a time🤔 any thoughts? Setting??#thanks,app_technical,0.446655809879303,0.8772532939910889,20,False,app_technical,,N/A,auto_handle
+2586296,Can someone tell me how [USER]  prime shipping is getting me Ultra Moon on Tuesday :/,subscription_prime,0.7034107446670532,0.795204222202301,16,False,subscription_prime,,N/A,auto_handle
+595725,[USER] driving down the highway and seeing a driver hauling your packages are just allowing them to fly out of the tail gate of his truck on the highway driving 75 almost 80 mph and the amazon driver didnt care,delivery_problem,0.767411470413208,0.7302002906799316,40,False,seller_complaint,,N/A,escalate
+1201907,[USER] I received my shipment but delivery status says its lost USPS ID:936128__credit_card__ Thank you [URL],order_status_inquiry,0.5245406031608582,0.7541508674621582,16,False,delivery_problem,,N/A,escalate
+874633,[USER] [ORDER_ID]. Product already pick up. But account details doesn't show about return. Because of that I can't able to,return_refund,0.3832748234272003,0.7679770588874817,20,False,return_refund,,N/A,escalate
+2940239,[USER] AMZ Logistics fails to deliver on time. Can I request that my orders be shipped by another carrier?,order_status_inquiry,0.7058094143867493,0.7525237798690796,19,False,order_status_inquiry,,4,escalate
+103080,[USER] my friend has had money taken out of her bank and she hasn't bought anything and isn't signed up for anything [USER],billing_payment,0.314072847366333,0.7062022686004639,23,True,billing_payment,,N/A,escalate
+2378254,[USER]  founder of  Amazon  will kindly  intervene  to refund the amount paid by me for the mob one plus 5 on 27/10/17 from Amazon.  I have exhausted my patience and no one is  helping  in amazon  despite my best follow up by mails and calls.,billing_payment,0.3205938637256622,0.8115664720535278,45,True,return_refund,,N/A,escalate
+868091,[USER] why is it so hard to change my payment to the gift card option at checkout?,billing_payment,0.5253984332084656,0.7254492044448853,17,False,billing_payment,,N/A,auto_handle
+2935866,[USER] [URL],compliment_feedback,0.5578781366348267,1.0000001192092896,2,True,order_status_inquiry,,N/A,auto_handle
+389329,[USER] [USER] ur claim for order is granted...what does this statement means and also when will i get my product return..,return_refund,0.485134094953537,0.6735010147094727,21,False,return_refund,,N/A,escalate
+259930,"Hey [USER]. Do not use [USER] for 1-Day LA shipping. Their reputation is horrendous. Due to ineptness, might have to cancel order",seller_complaint,0.3280050158500671,0.7709903717041016,22,True,seller_complaint,,N/A,auto_handle
 2283997,"I'm so mad [USER] [USER] 
 
-CAN YOU TELL ME WHY YOUR SUPERVISOR JESSICA HUNG UP ON ME?",seller_complaint,0.27883824706077576,0.9999998807907104,17,True,seller_complaint,,
-1617392,I'd requested redirection within 25km 3 days prior to delivery.product's been taken to the wrong address twice.DISGUSTING. [USER],delivery_problem,0.6278704404830933,1.000000238418579,18,False,delivery_problem,,
-2124848,[USER] after complaining on our last 9 deliveries for our parcels not to be left on our doorstep . We get home today and surprise surprise!! Getting nowhere fast ! Amazon sort yourselves out ! [URL],delivery_problem,0.7421904802322388,1.0,36,False,delivery_problem,,
-2927026,[USER] [USER] [USER] is this how you provide your products???no sim card tray in the ONEPLUS 5T box...[USER] kindly stop selling your phone through amazon. [URL],product_quality,0.25681909918785095,1.000000238418579,26,True,product_quality,,
+CAN YOU TELL ME WHY YOUR SUPERVISOR JESSICA HUNG UP ON ME?",seller_complaint,0.2788382470607757,0.7270545959472656,17,True,seller_complaint,,N/A,escalate
+1617392,I'd requested redirection within 25km 3 days prior to delivery.product's been taken to the wrong address twice.DISGUSTING. [USER],delivery_problem,0.6278704404830933,0.681887149810791,18,False,delivery_problem,,N/A,escalate
+2124848,[USER] after complaining on our last 9 deliveries for our parcels not to be left on our doorstep . We get home today and surprise surprise!! Getting nowhere fast ! Amazon sort yourselves out ! [URL],delivery_problem,0.7421904802322388,0.7963355779647827,36,False,delivery_problem,,N/A,escalate
+2927026,[USER] [USER] [USER] is this how you provide your products???no sim card tray in the ONEPLUS 5T box...[USER] kindly stop selling your phone through amazon. [URL],product_quality,0.2568190991878509,0.7279041409492493,26,True,product_quality,,N/A,escalate
 1726354,"[USER] what is wrong with u people
 U didn't deliver my product and I got a message that product is delivered
-And I have paid amount",delivery_problem,0.6321525573730469,1.0,26,False,delivery_problem,,
+And I have paid amount",delivery_problem,0.6321525573730469,0.7793657779693604,26,False,delivery_problem,,N/A,escalate
 1489145,"[USER] am having a problem on order, payment declined, checked cards OK.
-Where do I go from here?",order_status_inquiry,0.29422780871391296,1.000000238418579,18,True,billing_payment,,
-1077314,"Shit myself when I came home and saw like a hundred missing in my bank account, turns out Amazon decided to steal my cash which is v v cool",billing_payment,0.22276456654071808,1.0000001192092896,29,True,billing_payment,,
-799699,"[USER] as usual another broken promise from Amazon , customer service leaves a lot to be desired ! Even after being given chance after chance !",compliment_feedback,0.3591581881046295,1.0,26,False,seller_complaint,,
-1071060,I would love to discuss packaging practices with someone [USER] as I am tired of returning damaged merchandise because of poor packing.,delivery_problem,0.25167471170425415,0.9999999403953552,22,True,seller_complaint,,
-1366193,"[USER] I bought an amazon fire tablet 7 days ago and now the price has dropped. Customer service says I can return item and order new. I have no problem doing that just seems like this policy will cost you more than just [ORDER_ID] difference, But I guess Bezos knows better",billing_payment,0.3685222864151001,1.0000001192092896,51,False,return_refund,,
-2822321,Après 5 ou 6 envois ratés de la part de [USER] - j’espère que c’est enfin la bonne ! [URL],compliment_feedback,0.4353695511817932,1.0,20,False,seller_complaint,,
+Where do I go from here?",order_status_inquiry,0.2942278087139129,0.7614362239837646,18,True,billing_payment,,N/A,auto_handle
+1077314,"Shit myself when I came home and saw like a hundred missing in my bank account, turns out Amazon decided to steal my cash which is v v cool",billing_payment,0.222764566540718,0.7345594167709351,29,True,billing_payment,,N/A,escalate
+799699,"[USER] as usual another broken promise from Amazon , customer service leaves a lot to be desired ! Even after being given chance after chance !",compliment_feedback,0.3591581881046295,0.8678649663925171,26,False,seller_complaint,,N/A,escalate
+1071060,I would love to discuss packaging practices with someone [USER] as I am tired of returning damaged merchandise because of poor packing.,delivery_problem,0.2516747117042541,0.7644094228744507,22,True,seller_complaint,,N/A,auto_handle
+1366193,"[USER] I bought an amazon fire tablet 7 days ago and now the price has dropped. Customer service says I can return item and order new. I have no problem doing that just seems like this policy will cost you more than just [ORDER_ID] difference, But I guess Bezos knows better",billing_payment,0.3685222864151001,0.790879487991333,51,False,return_refund,,N/A,auto_handle
+2822321,Après 5 ou 6 envois ratés de la part de [USER] - j’espère que c’est enfin la bonne ! [URL],compliment_feedback,0.4353695511817932,0.6553787589073181,20,False,seller_complaint,,N/A,auto_handle
 421217,"I don't think now the customer is any concern to you. [USER]  #AmazonIndia
-ORDER # [ORDER_ID]. Check out the circus going on.",order_status_inquiry,0.29231971502304077,1.0,22,True,seller_complaint,,
-2642027,[USER] Amazon mega fair is coming?,subscription_prime,0.6072065234184265,1.0,6,True,compliment_feedback,,
+ORDER # [ORDER_ID]. Check out the circus going on.",order_status_inquiry,0.2923197150230407,0.8112954497337341,22,True,seller_complaint,,N/A,escalate
+2642027,[USER] Amazon mega fair is coming?,subscription_prime,0.6072065234184265,0.6952160596847534,6,True,compliment_feedback,,N/A,auto_handle
 2379782,"Amazonカスタマーサービス
 [PHONE]
 会員登録の未納料金が発生しております。
@@ -63,186 +63,186 @@ ORDER # [ORDER_ID]. Check out the circus going on.",order_status_inquiry,0.29231
 法的手続きに移行します。
 
 ってショートメールで来ても絶対かけ直したりしたらいけんで！！
-ほんまみんな気をつけて……！",compliment_feedback,0.46359363198280334,0.9999998807907104,7,True,seller_complaint,,
-2522269,Expertos en [USER] tengo una duda.,compliment_feedback,0.6638234257698059,1.0000001192092896,6,True,compliment_feedback,,
-442976,"[USER].com [USER] Your customer service did nothing but waste my time, I will not be making anymore purchases ✌️",seller_complaint,0.4093843102455139,1.0000001192092896,19,False,seller_complaint,,
-1207606,[USER] just installed the latest 4k firetv box and [USER]  is no where to be found on your system? has it been pulled?,app_technical,0.35071828961372375,1.0,23,True,app_technical,,
-1425098,[USER] still not had a reply on how to unsubscribe from channels on fire stick. I know you want my £ but i don't want service anymore.,account_access,0.37385624647140503,1.000000238418579,27,False,subscription_prime,,
-1553856,"[USER] i used my axis bank credit card in your app , on the next day my account is debited by 2400 rs .i have been cheated by someone...",billing_payment,0.4032977223396301,0.9999997019767761,29,False,billing_payment,,
-509350,boycotting [USER] for poor customer service... used to be a lot better. Now imagine this being our only option one day.....,seller_complaint,0.3711974024772644,0.9999997615814209,21,False,seller_complaint,,
-1495221,I woke up this morning to [USER] not having predicted that I needed more toilet paper. I'm disappointed in this future. Be better [USER],compliment_feedback,0.3418637216091156,1.0000001192092896,24,True,compliment_feedback,,
-1722145,[USER] this message won’t go away I want to cancel reoccurring payments [URL],billing_payment,0.3099936246871948,1.000000238418579,13,True,billing_payment,,
+ほんまみんな気をつけて……！",compliment_feedback,0.4635936319828033,0.7921172380447388,7,True,seller_complaint,,N/A,escalate
+2522269,Expertos en [USER] tengo una duda.,compliment_feedback,0.6638234257698059,0.7456693649291992,6,True,compliment_feedback,,N/A,escalate
+442976,"[USER].com [USER] Your customer service did nothing but waste my time, I will not be making anymore purchases ✌️",seller_complaint,0.4093843102455139,0.7667227387428284,19,False,seller_complaint,,N/A,escalate
+1207606,[USER] just installed the latest 4k firetv box and [USER]  is no where to be found on your system? has it been pulled?,app_technical,0.3507182896137237,0.7667468786239624,23,True,app_technical,,N/A,auto_handle
+1425098,[USER] still not had a reply on how to unsubscribe from channels on fire stick. I know you want my £ but i don't want service anymore.,account_access,0.373856246471405,0.6311432123184204,27,False,subscription_prime,,N/A,auto_handle
+1553856,"[USER] i used my axis bank credit card in your app , on the next day my account is debited by 2400 rs .i have been cheated by someone...",billing_payment,0.4032977223396301,0.6643282175064087,29,False,billing_payment,,N/A,escalate
+509350,boycotting [USER] for poor customer service... used to be a lot better. Now imagine this being our only option one day.....,seller_complaint,0.3711974024772644,0.7802801728248596,21,False,seller_complaint,,N/A,auto_handle
+1495221,I woke up this morning to [USER] not having predicted that I needed more toilet paper. I'm disappointed in this future. Be better [USER],compliment_feedback,0.3418637216091156,0.595553457736969,24,True,compliment_feedback,,N/A,auto_handle
+1722145,[USER] this message won’t go away I want to cancel reoccurring payments [URL],billing_payment,0.3099936246871948,0.7728109359741211,13,True,billing_payment,,N/A,auto_handle
 345843,"Hey [USER]  is this real or a scam?
-#amazon #HelpMeOut #ScamOrNot [URL]",compliment_feedback,0.28001588582992554,1.0,12,True,compliment_feedback,,
-2486967,[USER] what’s the point of #AmazonPrime when you are not capable of delivering products on promised delivery date. This is lack of #logistics and #Operations management. Customer should be compensated for the poor service.[USER] [USER],seller_complaint,0.2896813154220581,1.000000238418579,35,True,order_status_inquiry,,
-2487081,[USER] Need some assistance on a discount code which was sent for me.,return_refund,0.356611430644989,1.0,13,True,billing_payment,,
-2135642,[USER] have purchased a fire stick and not working after using for 25 days...to replace it u will take 50 days..not expected from a global company like this [USER],product_quality,0.26625069975852966,1.0,29,True,seller_complaint,,
+#amazon #HelpMeOut #ScamOrNot [URL]",compliment_feedback,0.2800158858299255,0.7756105065345764,12,True,compliment_feedback,,N/A,escalate
+2486967,[USER] what’s the point of #AmazonPrime when you are not capable of delivering products on promised delivery date. This is lack of #logistics and #Operations management. Customer should be compensated for the poor service.[USER] [USER],seller_complaint,0.2896813154220581,0.8257753252983093,35,True,order_status_inquiry,,N/A,escalate
+2487081,[USER] Need some assistance on a discount code which was sent for me.,return_refund,0.356611430644989,0.7070518136024475,13,True,billing_payment,,N/A,escalate
+2135642,[USER] have purchased a fire stick and not working after using for 25 days...to replace it u will take 50 days..not expected from a global company like this [USER],product_quality,0.2662506997585296,0.7914518117904663,29,True,seller_complaint,,N/A,escalate
 2703161,"[USER] In amazon.de, language EN, it shows currency 💷 in filter, although all items' prices are 💶 
 
-[URL] [URL]",product_quality,0.22538091242313385,1.0,19,True,app_technical,,
-785097,[USER] you show lockers in Toronto but the app only lets you select pick up points,app_technical,0.3505689799785614,0.9999998211860657,16,True,app_technical,,
-1115777,Didn't rcv the refund in Citi bank on Amazon shopping [USER] [USER],return_refund,0.4637516438961029,0.9999998807907104,12,False,return_refund,,
-669158,[USER] can you help me find who I just spoke with? I wanna give a review!,account_access,0.3003591299057007,1.000000238418579,16,False,compliment_feedback,,
-962166,[USER] Why did i get charged the price of my item instead of getting a refund??,return_refund,0.37053877115249634,0.9999997019767761,16,True,return_refund,,
-136850,[USER] hello I have ordered an 32 GB sd card from you guys.. but you delivered an defective product.. I want to return it.. you guys were asking for a replacement which I don't to..  please refund me the amount [URL],return_refund,0.32775184512138367,0.9999998807907104,41,True,return_refund,,
+[URL] [URL]",product_quality,0.2253809124231338,0.6879817247390747,19,True,app_technical,,N/A,auto_handle
+785097,[USER] you show lockers in Toronto but the app only lets you select pick up points,app_technical,0.3505689799785614,0.6456878185272217,16,True,app_technical,,N/A,auto_handle
+1115777,Didn't rcv the refund in Citi bank on Amazon shopping [USER] [USER],return_refund,0.4637516438961029,0.6992584466934204,12,False,return_refund,,N/A,escalate
+669158,[USER] can you help me find who I just spoke with? I wanna give a review!,account_access,0.3003591299057007,0.6762187480926514,16,False,compliment_feedback,,N/A,escalate
+962166,[USER] Why did i get charged the price of my item instead of getting a refund??,return_refund,0.3705387711524963,0.8121894001960754,16,True,return_refund,,N/A,escalate
+136850,[USER] hello I have ordered an 32 GB sd card from you guys.. but you delivered an defective product.. I want to return it.. you guys were asking for a replacement which I don't to..  please refund me the amount [URL],return_refund,0.3277518451213836,0.6509771347045898,41,True,return_refund,,N/A,escalate
 1483579,"amazonを装った詐欺メきてくそ焦った
-こないだ利用したばっかだから尚更な",compliment_feedback,0.3877912163734436,1.0000003576278687,2,True,seller_complaint,,
-184872,"Well, that's FANTASTIC. My #amwriting music is gone right now because the [USER] app for my laptop NEEDED to update, and now it's not working. LOVELY.",app_technical,0.5859215259552002,1.0,26,False,app_technical,,
-32314,[USER] Promotional cash back not credited even after refund date been crossed [URL] order# [ORDER_ID]☹️😡,return_refund,0.4905097186565399,1.0,15,False,return_refund,,
+こないだ利用したばっかだから尚更な",compliment_feedback,0.3877912163734436,0.7912180423736572,2,True,seller_complaint,,N/A,escalate
+184872,"Well, that's FANTASTIC. My #amwriting music is gone right now because the [USER] app for my laptop NEEDED to update, and now it's not working. LOVELY.",app_technical,0.5859215259552002,0.6503459215164185,26,False,app_technical,,N/A,auto_handle
+32314,[USER] Promotional cash back not credited even after refund date been crossed [URL] order# [ORDER_ID]☹️😡,return_refund,0.4905097186565399,0.8284192085266113,15,False,return_refund,,N/A,escalate
 1150241,"いつになったらAmazonちゃんは『商品をまとめて一回の発送にしてくれや。　頼むで』って注文時発注しているのに、
 
 準備できたのから別々に送るで！
 ついでに配送会社も別々や！
 
-というのをやめてくれるのだろうか(ヽ´ω`)",compliment_feedback,0.43002527952194214,1.0000001192092896,5,True,delivery_problem,,
-729895,[USER] bought moto metal earphones in Aug from [USER]. Now one earpiece not working. What to do,product_quality,0.29859083890914917,1.0,17,True,product_quality,,
-2565560,[USER] thanks for leaving my package in the trash can cupboard outside for someone to steal. Real clever of you 😏,delivery_problem,0.4948976933956146,1.0000004768371582,21,False,delivery_problem,,
-1684601,Sometimes talking to [USER] via the phone and chat is like visiting a dentist for a root canal. [URL],compliment_feedback,0.2996426224708557,0.9999999403953552,19,True,seller_complaint,,
-757696,[USER] is amazon flex available in Las Vegas,subscription_prime,0.43351656198501587,1.0,8,True,compliment_feedback,,
-1247764,[USER] Sooooooo I have a package that was supposed to be delivered by 9pm... It's 9:30...,order_status_inquiry,0.8083786964416504,1.0,16,False,order_status_inquiry,,
-986065,久々にamazonで買い物しようとしたら，いつの間にかアマゾンプライム会員になってたことに気付いた．なんだコレ？詐欺？,compliment_feedback,0.3763517439365387,1.0,1,True,subscription_prime,,
-1614782,[USER] there is something wron with this #lightningDeal . After payment it flashed to my little brain that there was complete darkness after the lightning payment. No offer applied. [URL],product_quality,0.2363058477640152,1.000000238418579,30,True,billing_payment,,
-2433658,[USER] My partner is trying to use the GREATFOOD promo for £20 off his first FRESH order. It won’t work! Can you help?,subscription_prime,0.27254119515419006,1.000000238418579,23,True,billing_payment,,
-1244373,Ay man [USER] is really about to piss me the fuck off.!!,compliment_feedback,0.2844150960445404,1.0,12,True,seller_complaint,,
-2609338,Stop pretending that u help your customers...! Your customer service is useless [USER],seller_complaint,0.4061156213283539,1.000000238418579,13,False,seller_complaint,,
+というのをやめてくれるのだろうか(ヽ´ω`)",compliment_feedback,0.4300252795219421,0.7433562874794006,5,True,delivery_problem,,N/A,auto_handle
+729895,[USER] bought moto metal earphones in Aug from [USER]. Now one earpiece not working. What to do,product_quality,0.2985908389091491,0.6600275039672852,17,True,product_quality,,N/A,escalate
+2565560,[USER] thanks for leaving my package in the trash can cupboard outside for someone to steal. Real clever of you 😏,delivery_problem,0.4948976933956146,0.7395418286323547,21,False,delivery_problem,,N/A,auto_handle
+1684601,Sometimes talking to [USER] via the phone and chat is like visiting a dentist for a root canal. [URL],compliment_feedback,0.2996426224708557,0.614753007888794,19,True,seller_complaint,,N/A,auto_handle
+757696,[USER] is amazon flex available in Las Vegas,subscription_prime,0.4335165619850158,0.7425100803375244,8,True,compliment_feedback,,N/A,escalate
+1247764,[USER] Sooooooo I have a package that was supposed to be delivered by 9pm... It's 9:30...,order_status_inquiry,0.8083786964416504,0.833672821521759,16,False,order_status_inquiry,,N/A,auto_handle
+986065,久々にamazonで買い物しようとしたら，いつの間にかアマゾンプライム会員になってたことに気付いた．なんだコレ？詐欺？,compliment_feedback,0.3763517439365387,0.7612930536270142,1,True,subscription_prime,,N/A,escalate
+1614782,[USER] there is something wron with this #lightningDeal . After payment it flashed to my little brain that there was complete darkness after the lightning payment. No offer applied. [URL],product_quality,0.2363058477640152,0.6516758799552917,30,True,billing_payment,,N/A,escalate
+2433658,[USER] My partner is trying to use the GREATFOOD promo for £20 off his first FRESH order. It won’t work! Can you help?,subscription_prime,0.27254119515419,0.5907586216926575,23,True,billing_payment,,N/A,escalate
+1244373,Ay man [USER] is really about to piss me the fuck off.!!,compliment_feedback,0.2844150960445404,0.7515676021575928,12,True,seller_complaint,,N/A,auto_handle
+2609338,Stop pretending that u help your customers...! Your customer service is useless [USER],seller_complaint,0.4061156213283539,0.7634009122848511,13,False,seller_complaint,,N/A,escalate
 1127981,"[USER] i ordered bean bag on 7th OCT still not received.
 order no : [ORDER_ID]
 it's more than 18 day
-worst customer support",order_status_inquiry,0.7266187071800232,1.0000001192092896,23,False,order_status_inquiry,,
-2463139,Get 3 months of Amazon Music Unlimited for only $0.99! Limited time only.,compliment_feedback,0.2997815012931824,1.000000238418579,13,True,compliment_feedback,,
-1211210,Really [USER] - does a single belt really need a box this big? Such a waste of resources!! Could have fit a tv in there! [URL],delivery_problem,0.33682751655578613,1.0,26,True,compliment_feedback,,
-2836926,[USER] NEVER USING YOUR SERVICE AGAIN - EVERY TIME I USE YOU YOUR SERVICE IS THE WORST 😡😡😡😡😡😡😡😡😡😡😡😡😡😡😡😡😡😡😡😡😡😡😡😡😡😡😡😡😡😡😡😡😡😡😡😡😡😡😡😡😡😡😡😡😡😡😡😡😡,seller_complaint,0.2871401607990265,1.0000001192092896,18,True,seller_complaint,,
-47893,[USER] what happens if you buy a digital copy of a game on amazon?,product_quality,0.27718183398246765,1.0000001192092896,14,True,compliment_feedback,,
-2017587,"[USER] today I received a call from +353 1 246 0950 the guy from the other end says he is from amazon, is it true?",order_status_inquiry,0.6082196235656738,1.000000238418579,25,False,seller_complaint,,
-2883404,[USER] Registrd a complaint with Amazon long back. Sent so many emails yet to get a resolution.U assign new analyst evrytime who s unaware of d background nd only replies just fr d sake of it.May u plz intervene and close dis case.Let me know hw can i share more details here,account_access,0.3332630693912506,1.0000003576278687,52,True,seller_complaint,,
-969336,There is a HUGE section of Indians who HATE bollywood movies. I hope someone at [USER] and [USER] understands that.,compliment_feedback,0.5407634973526001,1.0,20,False,compliment_feedback,,
-1780111,Lazy delivery guy hurls an Amazon package at the front door of a Chicago home [URL],delivery_problem,0.6332231163978577,1.0000001192092896,16,False,delivery_problem,,
+worst customer support",order_status_inquiry,0.7266187071800232,0.724885106086731,23,False,order_status_inquiry,,N/A,escalate
+2463139,Get 3 months of Amazon Music Unlimited for only $0.99! Limited time only.,compliment_feedback,0.2997815012931824,0.970323085784912,13,True,compliment_feedback,,N/A,auto_handle
+1211210,Really [USER] - does a single belt really need a box this big? Such a waste of resources!! Could have fit a tv in there! [URL],delivery_problem,0.3368275165557861,0.4813207685947418,26,True,compliment_feedback,,N/A,auto_handle
+2836926,[USER] NEVER USING YOUR SERVICE AGAIN - EVERY TIME I USE YOU YOUR SERVICE IS THE WORST 😡😡😡😡😡😡😡😡😡😡😡😡😡😡😡😡😡😡😡😡😡😡😡😡😡😡😡😡😡😡😡😡😡😡😡😡😡😡😡😡😡😡😡😡😡😡😡😡😡,seller_complaint,0.2871401607990265,0.820128858089447,18,True,seller_complaint,,N/A,escalate
+47893,[USER] what happens if you buy a digital copy of a game on amazon?,product_quality,0.2771818339824676,0.6407844424247742,14,True,compliment_feedback,,N/A,auto_handle
+2017587,"[USER] today I received a call from +353 1 246 0950 the guy from the other end says he is from amazon, is it true?",order_status_inquiry,0.6082196235656738,0.8187992572784424,25,False,seller_complaint,,N/A,escalate
+2883404,[USER] Registrd a complaint with Amazon long back. Sent so many emails yet to get a resolution.U assign new analyst evrytime who s unaware of d background nd only replies just fr d sake of it.May u plz intervene and close dis case.Let me know hw can i share more details here,account_access,0.3332630693912506,0.6647485494613647,52,True,seller_complaint,,N/A,escalate
+969336,There is a HUGE section of Indians who HATE bollywood movies. I hope someone at [USER] and [USER] understands that.,compliment_feedback,0.5407634973526001,0.6831610202789307,20,False,compliment_feedback,,N/A,auto_handle
+1780111,Lazy delivery guy hurls an Amazon package at the front door of a Chicago home [URL],delivery_problem,0.6332231163978577,0.6768759489059448,16,False,delivery_problem,,N/A,auto_handle
 1306795,"What the fook? [USER] 
 
-App is not working anymore [URL]",app_technical,0.599527895450592,1.000000238418579,10,False,app_technical,,
+App is not working anymore [URL]",app_technical,0.599527895450592,0.7860629558563232,10,False,app_technical,,N/A,auto_handle
 419888,"[USER] Mr Mayuresh,India I thk the way a customer has to be handled it shud be taught to u.
-Pathetic Experience [USER]",compliment_feedback,0.27148202061653137,0.9999999403953552,22,True,seller_complaint,,
-2827381,[USER] will prime be delivering on Christmas Eve ? If I was to order the day before? (23rd),subscription_prime,0.6341490745544434,1.0,18,False,subscription_prime,,
-2039599,[USER] So can you return Amazon purchases to Whole Foods or not?,billing_payment,0.47239553928375244,1.0000001192092896,12,False,billing_payment,,
-2731147,[USER] Me gustaría entrevistar a algún responsable de Amazon Prime en España sobre el auge del vídeo bajo demanda. Muchas gracias.,compliment_feedback,0.37941041588783264,1.0000001192092896,21,True,compliment_feedback,,
-357381,[USER] app on Roku tv pauses every min or two up to 2 or 3 min then repeats. Does this for every show. Tv has been factory reset.,app_technical,0.607384979724884,1.0,28,False,app_technical,,
-526566,"[USER] if [URL] has a 20% off coupon available for an item I have a Dash button for, how to I get the coupon using the Dash button?",product_quality,0.2682287395000458,1.0,28,True,billing_payment,,
-2890520,.[USER] Really Amazon? Was this box necessary? A 12 inch rule in a 4ft box! This cost me an additional €14.95 in shipping costs. Not impressed. [URL],product_quality,0.29011306166648865,1.0,27,True,seller_complaint,,
-739104,[USER] To Reduce fraud claims From customers Come up with an Idea where customers will open the package in front of Delivery boy,seller_complaint,0.45095112919807434,1.000000238418579,23,False,compliment_feedback,,
+Pathetic Experience [USER]",compliment_feedback,0.2714820206165313,0.7692000865936279,22,True,seller_complaint,,N/A,auto_handle
+2827381,[USER] will prime be delivering on Christmas Eve ? If I was to order the day before? (23rd),subscription_prime,0.6341490745544434,0.7632778286933899,18,False,subscription_prime,,N/A,auto_handle
+2039599,[USER] So can you return Amazon purchases to Whole Foods or not?,billing_payment,0.4723955392837524,0.6356281638145447,12,False,billing_payment,,N/A,auto_handle
+2731147,[USER] Me gustaría entrevistar a algún responsable de Amazon Prime en España sobre el auge del vídeo bajo demanda. Muchas gracias.,compliment_feedback,0.3794104158878326,0.8344419002532959,21,True,compliment_feedback,,N/A,escalate
+357381,[USER] app on Roku tv pauses every min or two up to 2 or 3 min then repeats. Does this for every show. Tv has been factory reset.,app_technical,0.607384979724884,0.6692802906036377,28,False,app_technical,,N/A,auto_handle
+526566,"[USER] if [URL] has a 20% off coupon available for an item I have a Dash button for, how to I get the coupon using the Dash button?",product_quality,0.2682287395000458,0.5997085571289062,28,True,billing_payment,,N/A,escalate
+2890520,.[USER] Really Amazon? Was this box necessary? A 12 inch rule in a 4ft box! This cost me an additional €14.95 in shipping costs. Not impressed. [URL],product_quality,0.2901130616664886,0.605974555015564,27,True,seller_complaint,,N/A,auto_handle
+739104,[USER] To Reduce fraud claims From customers Come up with an Idea where customers will open the package in front of Delivery boy,seller_complaint,0.4509511291980743,0.748232364654541,23,False,compliment_feedback,,N/A,escalate
 1693312,"アマゾンプライム会員なのを昨日まで忘れてた
-ガンダムシリーズをタダで見れるじゃん",compliment_feedback,0.37705981731414795,0.9999998807907104,2,True,compliment_feedback,,
-497306,I appreciate the fast shipment [USER] but you really could downsize on the shipping boxes lol. A poster and a trunk net didn't need a box this big ☺. cc: [USER] [URL],compliment_feedback,0.3688901960849762,0.9999998211860657,32,True,compliment_feedback,,
-1570295,[USER] Not at all satisfied with your service. I am not getting my cashback tilp now. Not able to call you as well.,billing_payment,0.379382461309433,1.0000001192092896,23,False,seller_complaint,,
-1150911,[USER] got the items delivered. Arrived a week before ETA. nyc service. items are well packed. Didn't checked it yet. but hope it's fine,order_status_inquiry,0.5771008729934692,0.9999999403953552,24,False,compliment_feedback,,
-182633,#AmazonIndia #Amazon This s ridiculous that I hve nt received ma order n it's showing delivered. Plz check n clarify.... [URL],order_status_inquiry,0.47864222526550293,1.000000238418579,21,True,delivery_problem,,
-2721749,"Hi, [USER]  What happened to Returns #: DcKf7mPPRRMA  and #: DcH3r2PCRRMA  They were returned more than a month ago. When will we get replacements",return_refund,0.4561813175678253,0.9999998807907104,24,False,return_refund,,
+ガンダムシリーズをタダで見れるじゃん",compliment_feedback,0.3770598173141479,0.7995922565460205,2,True,compliment_feedback,,N/A,auto_handle
+497306,I appreciate the fast shipment [USER] but you really could downsize on the shipping boxes lol. A poster and a trunk net didn't need a box this big ☺. cc: [USER] [URL],compliment_feedback,0.3688901960849762,0.6319042444229126,32,True,compliment_feedback,,N/A,auto_handle
+1570295,[USER] Not at all satisfied with your service. I am not getting my cashback tilp now. Not able to call you as well.,billing_payment,0.379382461309433,0.87163245677948,23,False,seller_complaint,,N/A,escalate
+1150911,[USER] got the items delivered. Arrived a week before ETA. nyc service. items are well packed. Didn't checked it yet. but hope it's fine,order_status_inquiry,0.5771008729934692,0.7700512409210205,24,False,compliment_feedback,,N/A,auto_handle
+182633,#AmazonIndia #Amazon This s ridiculous that I hve nt received ma order n it's showing delivered. Plz check n clarify.... [URL],order_status_inquiry,0.4786422252655029,0.7575412392616272,21,True,delivery_problem,,N/A,escalate
+2721749,"Hi, [USER]  What happened to Returns #: DcKf7mPPRRMA  and #: DcH3r2PCRRMA  They were returned more than a month ago. When will we get replacements",return_refund,0.4561813175678253,0.5352505445480347,24,False,return_refund,,N/A,escalate
 2766398,"Hey [USER], I'm still waiting for a response. 
 
-[USER] [URL]",account_access,0.29074031114578247,1.0,10,True,seller_complaint,,
-791617,Amazonの支払いメールがこない🤔,compliment_feedback,0.48655685782432556,1.0000001192092896,1,True,billing_payment,,
-2384363,[USER] [USER] [USER] Different prices? Different discounts? Feels like a glitch or a bug [URL],billing_payment,0.39727696776390076,1.000000238418579,15,False,billing_payment,,
-877642,[USER] Great seeing audible support with Bluetooth. Next on the wishlist QI wireless charging. Dump aluminium with a thin glass back.,compliment_feedback,0.306489497423172,1.0,21,True,compliment_feedback,,
-1385269,#sonymobils I prchsd mobile from [USER].After purchased I found some issues on phone.Bocz of wrost return policy in [USER] nt rtrn [URL],seller_complaint,0.21285666525363922,0.9999997615814209,22,True,product_quality,,
+[USER] [URL]",account_access,0.2907403111457824,0.886163055896759,10,True,seller_complaint,,N/A,escalate
+791617,Amazonの支払いメールがこない🤔,compliment_feedback,0.4865568578243255,0.9017024040222168,1,True,billing_payment,,N/A,escalate
+2384363,[USER] [USER] [USER] Different prices? Different discounts? Feels like a glitch or a bug [URL],billing_payment,0.3972769677639007,0.7667438983917236,15,False,billing_payment,,N/A,auto_handle
+877642,[USER] Great seeing audible support with Bluetooth. Next on the wishlist QI wireless charging. Dump aluminium with a thin glass back.,compliment_feedback,0.306489497423172,0.6428169012069702,21,True,compliment_feedback,,N/A,auto_handle
+1385269,#sonymobils I prchsd mobile from [USER].After purchased I found some issues on phone.Bocz of wrost return policy in [USER] nt rtrn [URL],seller_complaint,0.2128566652536392,0.6462956070899963,22,True,product_quality,,N/A,auto_handle
 2594355,"Very much disappointed with [USER] [USER] [USER]  and [USER] [USER]  as i have bought one plus 5 128 gb 10 days back and now the new one plus 5t with brtter specs at same price. I want to return my product.
-Not at all acceptable.",product_quality,0.24372877180576324,1.0000001192092896,45,True,return_refund,,
-1454214,[USER]  m nt able to talk wid ur cust. care. So disappointed. Needed help. Pls call on [PHONE]. ur Helpline no. is crap,account_access,0.36843955516815186,1.0000001192092896,23,False,seller_complaint,,
-2551335,Will echo dot be in special packaging in India for invited customers ? [USER]  [USER],compliment_feedback,0.32340362668037415,1.0,15,True,compliment_feedback,,
-450760,Really disappointed with [USER] rejecting this item's review that has caused damage to my skin. Is this rewiew really offensive? Or is it selling this item? #shame [URL],delivery_problem,0.22750958800315857,1.0000001192092896,28,True,seller_complaint,,
+Not at all acceptable.",product_quality,0.2437287718057632,0.6555809378623962,45,True,return_refund,,N/A,escalate
+1454214,[USER]  m nt able to talk wid ur cust. care. So disappointed. Needed help. Pls call on [PHONE]. ur Helpline no. is crap,account_access,0.3684395551681518,0.7812588214874268,23,False,seller_complaint,,N/A,escalate
+2551335,Will echo dot be in special packaging in India for invited customers ? [USER]  [USER],compliment_feedback,0.3234036266803741,0.7399762868881226,15,True,compliment_feedback,,N/A,auto_handle
+450760,Really disappointed with [USER] rejecting this item's review that has caused damage to my skin. Is this rewiew really offensive? Or is it selling this item? #shame [URL],delivery_problem,0.2275095880031585,0.6852656602859497,28,True,seller_complaint,,N/A,escalate
 526570,". [USER] is selling 3rd party [ORDER_ID] iPhones with 6 month warranty, without mentioning anywhere except in the 4th product photo which no one will scroll to.
-This is pure dishonesty! Should be clearly mentioned in the title as ""[ORDER_ID]"" [URL]",seller_complaint,0.3586410582065582,1.0000001192092896,41,False,seller_complaint,,
-2686585,How is [USER] packaging still legal? [URL],product_quality,0.2949802875518799,1.000000238418579,7,True,product_quality,,
-315326,[USER] [USER] Trying to get your helpline. Not got a refund for over 3 months. Pls help.,return_refund,0.44552984833717346,1.0,17,False,return_refund,,
-2297735,"[USER] , i am very un happy,  one item return [URL] but no reply, no respons, i will return now approx   25 days.",return_refund,0.5081811547279358,0.9999997615814209,23,False,return_refund,,
-1427950,"[USER] Hello I contacted ur executive regarding an issue.She was rude ,unhelpful&amp;left the convo midway. I feel embarrassed and irritated [URL]",account_access,0.30661800503730774,1.000000238418579,21,True,seller_complaint,,
-2928368,"Brother [USER] I put a return request on a order like three weeks back. You don't seem to care about it, BUT I WANT MY FUCKING MONEY BACK.",return_refund,0.4913051426410675,1.0,28,False,return_refund,,
-1089808,[USER]  want to but nokia6 with exchange my mobile HTC 816g Dual sim but it is not shown in exchange option,product_quality,0.22971656918525696,0.9999999403953552,21,True,return_refund,,
-442830,"[USER] Your Leadership advisor named ""Arun"" has lied to me. He failed to add the gift card amt of Rs.150 which was promised. Kindly listen to the call and confirm actions taken.",seller_complaint,0.32895001769065857,1.0000001192092896,32,False,billing_payment,,
-2602991,A replacement remote is $30 or a new system for $24 😂 [USER] guess I'll hope it turns up,product_quality,0.26904937624931335,1.000000238418579,19,True,compliment_feedback,,
-1248256,"[USER]  Your service is an epic fail, allowing vendors to harass  customers, delayed returns, and now the wrong amt refunded. Horrible!!!!",seller_complaint,0.4164179563522339,1.0000004768371582,21,False,seller_complaint,,
-1774795,I got a brand new HDMI adapter from Amazon and it not only doesn't work but I think it almost fried my computer 😅,product_quality,0.3018593192100525,1.0,24,True,product_quality,,
-421189,[USER] Need assistance.,account_access,0.18253833055496216,0.9999998211860657,3,True,account_access,,
-442960,"[USER] Hi, I really need my #AmazonPrime order, but the locker was full yesterday when they tried to deliver. Now saying it might be as late as Friday 😦 Can I change to home delivery?! Pls reply, thx.",order_status_inquiry,0.8406428098678589,1.0000001192092896,38,False,order_status_inquiry,,
-2886562,[USER] [USER] [USER] shrill waiting for response. [URL],delivery_problem,0.2994374632835388,0.9999998807907104,8,True,delivery_problem,,
-487784,[USER] 12 eggs for 10k?? 😨 [URL],compliment_feedback,0.3357228636741638,1.0,7,True,compliment_feedback,,
-2429439,[USER] when will I get a pre-order date confirmed for Skyrim on Nintendo Switch?,subscription_prime,0.4600476920604706,1.0,14,True,subscription_prime,,
-1379582,[USER] I’m trying to return something and got this error [URL],return_refund,0.43645521998405457,1.0,11,False,return_refund,,
-1105575,"[USER] come on! If my employees delivered on time less than 50% of the time, they’d be unemployed #amazonprime",seller_complaint,0.22837699949741364,0.9999998807907104,19,True,seller_complaint,,
-2950780,Cheated by AMAZON India . Bought a Hp laptop through Amazon and trail version of MS office was uploaded and nothing in product description. I am running around to get the same [URL] from Amazin complaint team ....no help ...feeling cheated...call on [PHONE],seller_complaint,0.290558397769928,1.0000001192092896,43,True,seller_complaint,,
-1238950,Hey [USER] [USER] I keep getting this error when I try to play a video. I’ve already switched my account back to US. Help plz. [URL],account_access,0.43315112590789795,1.0000001192092896,26,True,app_technical,,
-2366263,寒すぎてアマゾンで電気ヒーター買った...あと数日の辛抱...😭,compliment_feedback,0.4781987965106964,1.0,1,True,compliment_feedback,,
-2130878,"[USER] my recent order has been put on hold, and my account locked. The email says to log into my account but it's locked. So how might one do what you've asked? [URL]",account_access,0.6399653553962708,1.0000001192092896,33,False,account_access,,
-728107,Pas sympa [USER] 'avoir déposé mon collis AU DESSUS DES BOITES AUX LETTRES de l'immeuble là ou tout le monde aurait pu le voler ;-(,compliment_feedback,0.5310849547386169,1.0000001192092896,25,False,seller_complaint,,
-465774,I had 60 dollars on my Amazon account and now I'm down to 29 I obviously need help,billing_payment,0.33898070454597473,0.9999999403953552,18,True,billing_payment,,
-1551624,"[USER] FAIL,FAIL,FAIL don’t charged Prime customers if it takes 6 DAYS TO DELIVER INSTEAD OF 2 I should’ve used [USER] and will",subscription_prime,0.653858482837677,1.0,22,False,delivery_problem,,
-2356736,"Hey [USER], just a quick question. Is there a way to make it so that I donate to the charity my [URL] account is linked to when I use the app? Or does it do it by default?",app_technical,0.31480273604393005,1.000000238418579,38,True,compliment_feedback,,
-836925,"[USER] I paid extra for same day delivery so it might not arrive for a few days. Please refund, thanks.",return_refund,0.45503953099250793,1.0000004768371582,20,False,return_refund,,
-1107875,[USER] is it company policy for your organisation to debit customer's accounts without prior notice?,billing_payment,0.3057204484939575,1.0000004768371582,15,True,billing_payment,,
-421892,"[USER] hi.. I bought MI Redmi 4, how will its invoice bill get?",product_quality,0.1923147588968277,1.0000003576278687,13,True,compliment_feedback,,
-2184889,[USER] Quando que o Amazon Prime vai chegar no Brasil?,subscription_prime,0.5387611985206604,1.000000238418579,10,False,subscription_prime,,
-2935887,[USER] [USER] 3 out past 4 deliveries have been delayed (including current one). Delivery agent unresponsive. Why should I continue paying for amazon prime?,subscription_prime,0.4967270493507385,1.0,24,False,delivery_problem,,
-132387,[USER] why are all prime orders placed today arriving Monday? I pay a fee for next day delivery.,subscription_prime,0.6495899558067322,1.0000001192092896,18,False,subscription_prime,,
-579122,Amazonプライムでシング見れるようになってる！！！プライムかいいんでよかった🗿🗿,compliment_feedback,0.41175034642219543,1.0000003576278687,1,True,compliment_feedback,,
+This is pure dishonesty! Should be clearly mentioned in the title as ""[ORDER_ID]"" [URL]",seller_complaint,0.3586410582065582,0.7305294871330261,41,False,seller_complaint,,N/A,escalate
+2686585,How is [USER] packaging still legal? [URL],product_quality,0.2949802875518799,0.7905888557434082,7,True,product_quality,,N/A,auto_handle
+315326,[USER] [USER] Trying to get your helpline. Not got a refund for over 3 months. Pls help.,return_refund,0.4455298483371734,0.8123232126235962,17,False,return_refund,,N/A,escalate
+2297735,"[USER] , i am very un happy,  one item return [URL] but no reply, no respons, i will return now approx   25 days.",return_refund,0.5081811547279358,0.7795041799545288,23,False,return_refund,,N/A,escalate
+1427950,"[USER] Hello I contacted ur executive regarding an issue.She was rude ,unhelpful&amp;left the convo midway. I feel embarrassed and irritated [URL]",account_access,0.3066180050373077,0.6478203535079956,21,True,seller_complaint,,N/A,escalate
+2928368,"Brother [USER] I put a return request on a order like three weeks back. You don't seem to care about it, BUT I WANT MY FUCKING MONEY BACK.",return_refund,0.4913051426410675,0.6735443472862244,28,False,return_refund,,N/A,escalate
+1089808,[USER]  want to but nokia6 with exchange my mobile HTC 816g Dual sim but it is not shown in exchange option,product_quality,0.2297165691852569,0.6249232292175293,21,True,return_refund,,N/A,escalate
+442830,"[USER] Your Leadership advisor named ""Arun"" has lied to me. He failed to add the gift card amt of Rs.150 which was promised. Kindly listen to the call and confirm actions taken.",seller_complaint,0.3289500176906585,0.6733365058898926,32,False,billing_payment,,N/A,escalate
+2602991,A replacement remote is $30 or a new system for $24 😂 [USER] guess I'll hope it turns up,product_quality,0.2690493762493133,0.6363112926483154,19,True,compliment_feedback,,N/A,auto_handle
+1248256,"[USER]  Your service is an epic fail, allowing vendors to harass  customers, delayed returns, and now the wrong amt refunded. Horrible!!!!",seller_complaint,0.4164179563522339,0.7586897611618042,21,False,seller_complaint,,N/A,escalate
+1774795,I got a brand new HDMI adapter from Amazon and it not only doesn't work but I think it almost fried my computer 😅,product_quality,0.3018593192100525,0.6132270693778992,24,True,product_quality,,N/A,escalate
+421189,[USER] Need assistance.,account_access,0.1825383305549621,0.969862937927246,3,True,account_access,,N/A,escalate
+442960,"[USER] Hi, I really need my #AmazonPrime order, but the locker was full yesterday when they tried to deliver. Now saying it might be as late as Friday 😦 Can I change to home delivery?! Pls reply, thx.",order_status_inquiry,0.8406428098678589,0.7705610990524292,38,False,order_status_inquiry,,N/A,escalate
+2886562,[USER] [USER] [USER] shrill waiting for response. [URL],delivery_problem,0.2994374632835388,0.8384209871292114,8,True,delivery_problem,,N/A,escalate
+487784,[USER] 12 eggs for 10k?? 😨 [URL],compliment_feedback,0.3357228636741638,0.6312503814697266,7,True,compliment_feedback,,N/A,auto_handle
+2429439,[USER] when will I get a pre-order date confirmed for Skyrim on Nintendo Switch?,subscription_prime,0.4600476920604706,0.7529076337814331,14,True,subscription_prime,,N/A,escalate
+1379582,[USER] I’m trying to return something and got this error [URL],return_refund,0.4364552199840545,0.8746411800384521,11,False,return_refund,,N/A,escalate
+1105575,"[USER] come on! If my employees delivered on time less than 50% of the time, they’d be unemployed #amazonprime",seller_complaint,0.2283769994974136,0.7183949947357178,19,True,seller_complaint,,N/A,auto_handle
+2950780,Cheated by AMAZON India . Bought a Hp laptop through Amazon and trail version of MS office was uploaded and nothing in product description. I am running around to get the same [URL] from Amazin complaint team ....no help ...feeling cheated...call on [PHONE],seller_complaint,0.290558397769928,0.6121242046356201,43,True,seller_complaint,,N/A,escalate
+1238950,Hey [USER] [USER] I keep getting this error when I try to play a video. I’ve already switched my account back to US. Help plz. [URL],account_access,0.4331511259078979,0.8320178985595703,26,True,app_technical,,N/A,auto_handle
+2366263,寒すぎてアマゾンで電気ヒーター買った...あと数日の辛抱...😭,compliment_feedback,0.4781987965106964,0.7401571273803711,1,True,compliment_feedback,,N/A,auto_handle
+2130878,"[USER] my recent order has been put on hold, and my account locked. The email says to log into my account but it's locked. So how might one do what you've asked? [URL]",account_access,0.6399653553962708,0.7692006826400757,33,False,account_access,,N/A,escalate
+728107,Pas sympa [USER] 'avoir déposé mon collis AU DESSUS DES BOITES AUX LETTRES de l'immeuble là ou tout le monde aurait pu le voler ;-(,compliment_feedback,0.5310849547386169,0.6873053908348083,25,False,seller_complaint,,N/A,auto_handle
+465774,I had 60 dollars on my Amazon account and now I'm down to 29 I obviously need help,billing_payment,0.3389807045459747,0.6696192026138306,18,True,billing_payment,,N/A,escalate
+1551624,"[USER] FAIL,FAIL,FAIL don’t charged Prime customers if it takes 6 DAYS TO DELIVER INSTEAD OF 2 I should’ve used [USER] and will",subscription_prime,0.653858482837677,0.771741509437561,22,False,delivery_problem,,N/A,escalate
+2356736,"Hey [USER], just a quick question. Is there a way to make it so that I donate to the charity my [URL] account is linked to when I use the app? Or does it do it by default?",app_technical,0.31480273604393,0.6011817455291748,38,True,compliment_feedback,,N/A,auto_handle
+836925,"[USER] I paid extra for same day delivery so it might not arrive for a few days. Please refund, thanks.",return_refund,0.4550395309925079,0.8698066473007202,20,False,return_refund,,N/A,escalate
+1107875,[USER] is it company policy for your organisation to debit customer's accounts without prior notice?,billing_payment,0.3057204484939575,0.5371617078781128,15,True,billing_payment,,N/A,auto_handle
+421892,"[USER] hi.. I bought MI Redmi 4, how will its invoice bill get?",product_quality,0.1923147588968277,0.6742781400680542,13,True,compliment_feedback,,N/A,escalate
+2184889,[USER] Quando que o Amazon Prime vai chegar no Brasil?,subscription_prime,0.5387611985206604,0.7804759740829468,10,False,subscription_prime,,N/A,auto_handle
+2935887,[USER] [USER] 3 out past 4 deliveries have been delayed (including current one). Delivery agent unresponsive. Why should I continue paying for amazon prime?,subscription_prime,0.4967270493507385,0.8417949080467224,24,False,delivery_problem,,N/A,escalate
+132387,[USER] why are all prime orders placed today arriving Monday? I pay a fee for next day delivery.,subscription_prime,0.6495899558067322,0.8826071619987488,18,False,subscription_prime,,N/A,escalate
+579122,Amazonプライムでシング見れるようになってる！！！プライムかいいんでよかった🗿🗿,compliment_feedback,0.4117503464221954,0.9173237085342408,1,True,compliment_feedback,,N/A,auto_handle
 2170931,"[USER] I ordered an item ad it says it was handed to resident but it wasn't 
 
-Please can you find it please as it was expensive and I'm going on holiday soon!",delivery_problem,0.472023069858551,1.0000001192092896,32,True,delivery_problem,,
-1759062,[USER] ..So friends BEWARE FROM AMAZON COMPANY ...BCZ MY FRIEND GOT DAMAGE PRODUCT AND FACED MISSING PRODUCT BY COMPANY,seller_complaint,0.3864730894565582,1.0,19,False,product_quality,,
-36563,[USER] when is Raja the great movie available in Telugu in prime,subscription_prime,0.4428676664829254,1.0000001192092896,12,False,subscription_prime,,
-47953,[USER] Why is the Indian Amazon Echo skill set limited? Ewelink is not showing up in the skill set!,app_technical,0.2559146285057068,1.0,19,True,app_technical,,
+Please can you find it please as it was expensive and I'm going on holiday soon!",delivery_problem,0.472023069858551,0.7024970650672913,32,True,delivery_problem,,N/A,escalate
+1759062,[USER] ..So friends BEWARE FROM AMAZON COMPANY ...BCZ MY FRIEND GOT DAMAGE PRODUCT AND FACED MISSING PRODUCT BY COMPANY,seller_complaint,0.3864730894565582,0.7688337564468384,19,False,product_quality,,N/A,escalate
+36563,[USER] when is Raja the great movie available in Telugu in prime,subscription_prime,0.4428676664829254,0.8024599552154541,12,False,subscription_prime,,N/A,auto_handle
+47953,[USER] Why is the Indian Amazon Echo skill set limited? Ewelink is not showing up in the skill set!,app_technical,0.2559146285057068,0.7038018703460693,19,True,app_technical,,N/A,auto_handle
 334910,"[USER] 
 Not yet received my refund , still awaiting , I don't know why, seller sold me , non - quality products. 
-No responses.",return_refund,0.49889636039733887,0.9999998807907104,24,False,return_refund,,
-639506,[USER] Not happy our order was due to arrive by 8pm this evening and what a surprise it hasn't arrived.,order_status_inquiry,0.855265736579895,1.0000001192092896,20,False,order_status_inquiry,,
-2595468,[USER] JUST FINISHED MY SECOND BLOCK FOR FLEX. CAN YOU MAKE THE NAVIGATION AVOID TOLL ROADS? AND DO YOU PROVIDE DOLLIES OR HAND CARTS FOR LARGER ORDERS?,delivery_problem,0.21621964871883392,1.0,27,True,compliment_feedback,,
-2742960,"[USER] [USER] i hv renewed by [USER] subs, but didnt get my cashback in Amazon pay... Why???",billing_payment,0.41141876578330994,1.0,17,True,billing_payment,,
-224636,Amazon Prime Music Incoming? Echo description shows on Amazon India.,subscription_prime,0.49382284283638,1.000000238418579,10,False,subscription_prime,,
+No responses.",return_refund,0.4988963603973388,0.7707111835479736,24,False,return_refund,,N/A,escalate
+639506,[USER] Not happy our order was due to arrive by 8pm this evening and what a surprise it hasn't arrived.,order_status_inquiry,0.855265736579895,0.8280707001686096,20,False,order_status_inquiry,,N/A,escalate
+2595468,[USER] JUST FINISHED MY SECOND BLOCK FOR FLEX. CAN YOU MAKE THE NAVIGATION AVOID TOLL ROADS? AND DO YOU PROVIDE DOLLIES OR HAND CARTS FOR LARGER ORDERS?,delivery_problem,0.2162196487188339,0.4880817532539367,27,True,compliment_feedback,,N/A,auto_handle
+2742960,"[USER] [USER] i hv renewed by [USER] subs, but didnt get my cashback in Amazon pay... Why???",billing_payment,0.4114187657833099,0.7897839546203613,17,True,billing_payment,,N/A,escalate
+224636,Amazon Prime Music Incoming? Echo description shows on Amazon India.,subscription_prime,0.49382284283638,0.8524680137634277,10,False,subscription_prime,,N/A,auto_handle
 2598846,"[USER] 
-Pathetic experience of non delivery by amazon even after selecting prime delivery. Have not received product after two days.",delivery_problem,0.3518398106098175,1.0,20,True,delivery_problem,,
-707378,[USER] [USER]  still i am waiting for 9 gb additional data of one plus 5 offer.no one responce properly.device purchased on 5 oct [URL],product_quality,0.2334461510181427,1.0000001192092896,24,True,billing_payment,,
-2766961,[USER] PLEASE FIX MY ACCOUNT BEFORE BLACK FRIDAY!!! I have been trying for WEEKS!!!!!,account_access,0.6281666159629822,1.0000001192092896,14,False,account_access,,
-572929,Amazonから支払い番号来ない🙃,compliment_feedback,0.4545326232910156,1.0000001192092896,1,True,billing_payment,,
-1307743,[USER] can I ask you a question regarding a product you have listed for sale?,billing_payment,0.21223390102386475,1.0000003576278687,15,True,compliment_feedback,,
-480402,What the fuck is this [USER] ? Evan Owens is 4 years old. How? Why? What the what??? [URL],delivery_problem,0.4871757924556732,0.9999998807907104,19,False,seller_complaint,,
-846873,What happened to landscape mode on the [USER] iPad app? Latest update seems to have removed it.,app_technical,0.5877767205238342,1.000000238418579,17,False,app_technical,,
+Pathetic experience of non delivery by amazon even after selecting prime delivery. Have not received product after two days.",delivery_problem,0.3518398106098175,0.8407269716262817,20,True,delivery_problem,,N/A,escalate
+707378,[USER] [USER]  still i am waiting for 9 gb additional data of one plus 5 offer.no one responce properly.device purchased on 5 oct [URL],product_quality,0.2334461510181427,0.6724893450737,24,True,billing_payment,,N/A,escalate
+2766961,[USER] PLEASE FIX MY ACCOUNT BEFORE BLACK FRIDAY!!! I have been trying for WEEKS!!!!!,account_access,0.6281666159629822,0.7425582408905029,14,False,account_access,,N/A,escalate
+572929,Amazonから支払い番号来ない🙃,compliment_feedback,0.4545326232910156,1.0000001192092896,1,True,billing_payment,,N/A,escalate
+1307743,[USER] can I ask you a question regarding a product you have listed for sale?,billing_payment,0.2122339010238647,0.7145078182220459,15,True,compliment_feedback,,N/A,escalate
+480402,What the fuck is this [USER] ? Evan Owens is 4 years old. How? Why? What the what??? [URL],delivery_problem,0.4871757924556732,0.5582139492034912,19,False,seller_complaint,,N/A,auto_handle
+846873,What happened to landscape mode on the [USER] iPad app? Latest update seems to have removed it.,app_technical,0.5877767205238342,0.9176998734474182,17,False,app_technical,,N/A,auto_handle
 837108,"[USER] [USER] 
-Whats wrong with your replacement policy? Or is it a trap from [USER] to sell faulty products on discount. [URL]",seller_complaint,0.44072359800338745,1.000000238418579,22,False,return_refund,,
-231545,"[USER] if you are offering min 50% off, why are some books at lesser discounts on the deal page [URL]",billing_payment,0.33566105365753174,1.0000001192092896,20,True,billing_payment,,
-1325533,[USER] prime has forsaken me. 4 days when it says 2 day delivery on dress I want. Diff dress same company has actual 2 day delivery? 😭😭,subscription_prime,0.7119886875152588,0.9999999403953552,27,False,subscription_prime,,
-1547590,"Ordered Running shoes order #[ORDER_ID] Request for faster delivery. It is for competition on15th Nov'17, #AmazonIndia #amazonIN",order_status_inquiry,0.8140978813171387,1.0,17,False,order_status_inquiry,,
-1098668,[USER] I didn't got the refund even after 2 weeks of return pickup. [URL],return_refund,0.5521676540374756,1.000000238418579,14,False,return_refund,,
-734172,"[USER] Have bought one call phone i.e. iphone6 32gb. Didn’t work properly, requisting for return but don’t get any help.",return_refund,0.2544669210910797,0.9999998807907104,20,True,return_refund,,
+Whats wrong with your replacement policy? Or is it a trap from [USER] to sell faulty products on discount. [URL]",seller_complaint,0.4407235980033874,0.764051079750061,22,False,return_refund,,N/A,auto_handle
+231545,"[USER] if you are offering min 50% off, why are some books at lesser discounts on the deal page [URL]",billing_payment,0.3356610536575317,0.7309679985046387,20,True,billing_payment,,N/A,auto_handle
+1325533,[USER] prime has forsaken me. 4 days when it says 2 day delivery on dress I want. Diff dress same company has actual 2 day delivery? 😭😭,subscription_prime,0.7119886875152588,0.7778164744377136,27,False,subscription_prime,,N/A,escalate
+1547590,"Ordered Running shoes order #[ORDER_ID] Request for faster delivery. It is for competition on15th Nov'17, #AmazonIndia #amazonIN",order_status_inquiry,0.8140978813171387,0.7267470359802246,17,False,order_status_inquiry,,N/A,escalate
+1098668,[USER] I didn't got the refund even after 2 weeks of return pickup. [URL],return_refund,0.5521676540374756,0.8983674049377441,14,False,return_refund,,N/A,escalate
+734172,"[USER] Have bought one call phone i.e. iphone6 32gb. Didn’t work properly, requisting for return but don’t get any help.",return_refund,0.2544669210910797,0.675075352191925,20,True,return_refund,,N/A,escalate
 2498834,"アマゾンから急に
 「有料コンテンツの料金が未納です。本日中に納付しない場合、法的措置をとります。」
 ってメール来たけど全然見覚えないし、
 記載されてる電話番号調べたら
-詐欺メールだった😒",compliment_feedback,0.42506662011146545,0.9999998807907104,5,True,seller_complaint,,
-1474608,[USER] Seriously you let the customer to decide whom to be fired? What should I answer for this support rep? [URL],seller_complaint,0.4439008831977844,0.9999999403953552,21,False,seller_complaint,,
-2309711,Amazon one day delivery is not available at my zip code but I cannot actually get the two day shipping I  pay for now. Seems like my shipments are late several times a month. Fix that first before you add stuff on for other people. #AmazonPrime,subscription_prime,0.5864948630332947,1.000000238418579,46,False,subscription_prime,,
-2714068,No halloween costume for me after another no show by [USER]. Prime? Prime time wasters 😑,compliment_feedback,0.5444303750991821,1.000000238418579,16,False,seller_complaint,,
-456622,"Amazon package that was scheduled to arrive today is now scheduled for next Wednesday.  You're slipping [USER] .  Another thing I didn't need anyway, gonna cancel and watch what I [ORDER_ID].",order_status_inquiry,0.8719307780265808,0.9999999403953552,31,False,order_status_inquiry,,
-421215,"[USER] I bought amazon basic iphone usb and it stopped working after 3 days.As it was working fine,i threw the box. Can i still return it",delivery_problem,0.2647974491119385,1.000000238418579,26,True,return_refund,,
-816337,"[USER] [USER] - Just received my order today! Pny be-740 power bank, full of scratches and looks used [URL]",delivery_problem,0.7800096273422241,1.0000001192092896,19,False,product_quality,,
+詐欺メールだった😒",compliment_feedback,0.4250666201114654,0.7784435749053955,5,True,seller_complaint,,N/A,escalate
+1474608,[USER] Seriously you let the customer to decide whom to be fired? What should I answer for this support rep? [URL],seller_complaint,0.4439008831977844,0.6407734155654907,21,False,seller_complaint,,N/A,escalate
+2309711,Amazon one day delivery is not available at my zip code but I cannot actually get the two day shipping I  pay for now. Seems like my shipments are late several times a month. Fix that first before you add stuff on for other people. #AmazonPrime,subscription_prime,0.5864948630332947,0.7923398017883301,46,False,subscription_prime,,N/A,escalate
+2714068,No halloween costume for me after another no show by [USER]. Prime? Prime time wasters 😑,compliment_feedback,0.5444303750991821,0.7274341583251953,16,False,seller_complaint,,N/A,escalate
+456622,"Amazon package that was scheduled to arrive today is now scheduled for next Wednesday.  You're slipping [USER] .  Another thing I didn't need anyway, gonna cancel and watch what I [ORDER_ID].",order_status_inquiry,0.8719307780265808,0.8143539428710938,31,False,order_status_inquiry,,N/A,escalate
+421215,"[USER] I bought amazon basic iphone usb and it stopped working after 3 days.As it was working fine,i threw the box. Can i still return it",delivery_problem,0.2647974491119385,0.5952916145324707,26,True,return_refund,,N/A,escalate
+816337,"[USER] [USER] - Just received my order today! Pny be-740 power bank, full of scratches and looks used [URL]",delivery_problem,0.7800096273422241,0.656478762626648,19,False,product_quality,,N/A,escalate
 25013,"[USER] I gt 2 updated from Amazon
 First my product got shiped..
-2nd I refused to take product...no cl for delivery",delivery_problem,0.6785068511962891,1.0,21,False,delivery_problem,,
-2233044,[USER] can you check i've actually refunded an item because i haven't got a confirmation email?,return_refund,0.5093629956245422,0.9999998807907104,16,False,return_refund,,
-1286726,"Is [USER] sellercentral down in the UK? The site's telling me: You don't have access yet, but I logged in yest and I've been user for years",account_access,0.26979708671569824,1.0,27,True,account_access,,
-2884995,"[USER] I have to receive a package yesterday but it didn't happen. I tried to call the amazon agent number but it was switched off. Today, the number was changed and when I call, the person says wrong number. I desperately need it today! Please help! [URL]",order_status_inquiry,0.40295737981796265,1.0000001192092896,47,True,delivery_problem,,
-2171704,[USER] I’ve been sent a promotional code for a £15 discount on a firestick but it only discounts £10?,billing_payment,0.4144079387187958,1.0000001192092896,19,False,billing_payment,,
-791021,"[USER] [USER] [USER] i have filled form lots of times, talked to numerous executives, is there anyone who works in your company.",account_access,0.24076740443706512,1.0000001192092896,22,True,seller_complaint,,
-1312536,"[USER] Please advise urgently, someone has used my card for a purchase that is fraudulent. I need to you cancel that sale.",billing_payment,0.31323155760765076,1.000000238418579,22,True,seller_complaint,,
-1156731,"[USER] This. This is not helpful. No ability to move further in your help section than ""look around, if not there then ¯\_(ツ)_/¯"". [URL]",app_technical,0.43980100750923157,1.000000238418579,24,False,seller_complaint,,
-310803,[USER] yo. Hmu in those dms I got an issue on a couple of my orders,order_status_inquiry,0.5886061191558838,1.0000001192092896,16,False,order_status_inquiry,,
-436919,[USER] 2day shipping with prime seems to not be a thing  ordered something on the 4th still yet to have it arrive 😔,subscription_prime,0.5646520256996155,1.0000001192092896,23,False,subscription_prime,,
-238068,I despise the [USER] marketing ghoul who decided my iOS Kindle app should show an alarm icon that displays dumb book recos in library view.,app_technical,0.4545789361000061,1.0,25,False,app_technical,,
-686690,Is there a way to add a puppy to your [USER] wishlist? Asking for a friend.,compliment_feedback,0.32953768968582153,1.0000001192092896,16,True,compliment_feedback,,
-1826117,Really [USER] a box for two small batteries #waste #excessbaggage #amazon [URL],compliment_feedback,0.48169606924057007,0.9999997615814209,12,False,compliment_feedback,,
-1769418,[USER] [USER] my kindle has been used once about 8 months ago and now it is stuck on this screen. No change. #kindlebook [URL],app_technical,0.3756709098815918,0.9999998807907104,24,False,app_technical,,
-2269356,"[USER] I have placed an order and from last 4 days my product is not been delivered to me, I have called Amazon's customer service they said that there will be updates later on but no update till now, It's so disappointing from amazon.",order_status_inquiry,0.8244972229003906,0.9999997019767761,44,False,order_status_inquiry,,
-379784,[USER] It's unfair to give refund cheques through a bank like Deutsche Bank which has just over 10 branches in whole nation. Dirty Trick! [URL],billing_payment,0.36943987011909485,0.9999998807907104,25,False,seller_complaint,,
-981040,"[USER] after several failed attempts, nothing plays past 3 secs on #amazonvideo. What's up with that?",app_technical,0.5265828967094421,1.000000238418579,16,False,app_technical,,
-2847443,[USER] redeemed themselves and my fire stick was delivered last night. I didn't know how I would survive without seeing [USER] for 12 hours. All is well in Freyaland once again.,delivery_problem,0.6272240281105042,0.9999997615814209,31,False,delivery_problem,,
-2774142,[USER] do you really not have packaging any smaller than this? #wasteful [URL],product_quality,0.2713086009025574,1.0,13,True,seller_complaint,,
-2341971,[USER] what is the point of being a prime member if I’m not getting my orders in 2 days. Like I don’t understand.,subscription_prime,0.7418389916419983,1.0,23,False,subscription_prime,,
-1109476,you are making ppl fool n are looting money of innocent buyers. I am looted by the [USER] even nobody is ready to help me out...,seller_complaint,0.4358944296836853,1.0000003576278687,26,False,seller_complaint,,
-557067,[USER] love the care and attention of the delivery driver if it doesn't fit the letterbox break it. #Unbelievable #badservice [URL],compliment_feedback,0.44704174995422363,1.000000238418579,21,False,seller_complaint,,
-524894,[USER] I sent in a kindle for a trade in. It was in perfect condition. Now I’m told the screen is cracked and they won’t give me the full amount. That’s a lie. I’m not going to use Amazon Trade-In again.,delivery_problem,0.24164749681949615,0.9999997615814209,41,True,return_refund,,
+2nd I refused to take product...no cl for delivery",delivery_problem,0.6785068511962891,0.7918033599853516,21,False,delivery_problem,,N/A,escalate
+2233044,[USER] can you check i've actually refunded an item because i haven't got a confirmation email?,return_refund,0.5093629956245422,0.7912125587463379,16,False,return_refund,,N/A,escalate
+1286726,"Is [USER] sellercentral down in the UK? The site's telling me: You don't have access yet, but I logged in yest and I've been user for years",account_access,0.2697970867156982,0.6328001618385315,27,True,account_access,,N/A,escalate
+2884995,"[USER] I have to receive a package yesterday but it didn't happen. I tried to call the amazon agent number but it was switched off. Today, the number was changed and when I call, the person says wrong number. I desperately need it today! Please help! [URL]",order_status_inquiry,0.4029573798179626,0.7493269443511963,47,True,delivery_problem,,N/A,escalate
+2171704,[USER] I’ve been sent a promotional code for a £15 discount on a firestick but it only discounts £10?,billing_payment,0.4144079387187958,0.8456090688705444,19,False,billing_payment,,N/A,escalate
+791021,"[USER] [USER] [USER] i have filled form lots of times, talked to numerous executives, is there anyone who works in your company.",account_access,0.2407674044370651,0.6715598106384277,22,True,seller_complaint,,N/A,auto_handle
+1312536,"[USER] Please advise urgently, someone has used my card for a purchase that is fraudulent. I need to you cancel that sale.",billing_payment,0.3132315576076507,0.8030247688293457,22,True,seller_complaint,,N/A,escalate
+1156731,"[USER] This. This is not helpful. No ability to move further in your help section than ""look around, if not there then ¯\_(ツ)_/¯"". [URL]",app_technical,0.4398010075092315,0.5926440954208374,24,False,seller_complaint,,N/A,escalate
+310803,[USER] yo. Hmu in those dms I got an issue on a couple of my orders,order_status_inquiry,0.5886061191558838,0.7340840101242065,16,False,order_status_inquiry,,N/A,escalate
+436919,[USER] 2day shipping with prime seems to not be a thing  ordered something on the 4th still yet to have it arrive 😔,subscription_prime,0.5646520256996155,0.8212950229644775,23,False,subscription_prime,,N/A,escalate
+238068,I despise the [USER] marketing ghoul who decided my iOS Kindle app should show an alarm icon that displays dumb book recos in library view.,app_technical,0.4545789361000061,0.6405606269836426,25,False,app_technical,,N/A,auto_handle
+686690,Is there a way to add a puppy to your [USER] wishlist? Asking for a friend.,compliment_feedback,0.3295376896858215,0.6778048872947693,16,True,compliment_feedback,,N/A,auto_handle
+1826117,Really [USER] a box for two small batteries #waste #excessbaggage #amazon [URL],compliment_feedback,0.48169606924057,0.7147077918052673,12,False,compliment_feedback,,N/A,auto_handle
+1769418,[USER] [USER] my kindle has been used once about 8 months ago and now it is stuck on this screen. No change. #kindlebook [URL],app_technical,0.3756709098815918,0.8262934684753418,24,False,app_technical,,N/A,escalate
+2269356,"[USER] I have placed an order and from last 4 days my product is not been delivered to me, I have called Amazon's customer service they said that there will be updates later on but no update till now, It's so disappointing from amazon.",order_status_inquiry,0.8244972229003906,0.8296037912368774,44,False,order_status_inquiry,,N/A,escalate
+379784,[USER] It's unfair to give refund cheques through a bank like Deutsche Bank which has just over 10 branches in whole nation. Dirty Trick! [URL],billing_payment,0.3694398701190948,0.6192929744720459,25,False,seller_complaint,,N/A,auto_handle
+981040,"[USER] after several failed attempts, nothing plays past 3 secs on #amazonvideo. What's up with that?",app_technical,0.5265828967094421,0.7423075437545776,16,False,app_technical,,N/A,escalate
+2847443,[USER] redeemed themselves and my fire stick was delivered last night. I didn't know how I would survive without seeing [USER] for 12 hours. All is well in Freyaland once again.,delivery_problem,0.6272240281105042,0.679808497428894,31,False,delivery_problem,,N/A,auto_handle
+2774142,[USER] do you really not have packaging any smaller than this? #wasteful [URL],product_quality,0.2713086009025574,0.8600660562515259,13,True,seller_complaint,,N/A,auto_handle
+2341971,[USER] what is the point of being a prime member if I’m not getting my orders in 2 days. Like I don’t understand.,subscription_prime,0.7418389916419983,0.834571897983551,23,False,subscription_prime,,N/A,auto_handle
+1109476,you are making ppl fool n are looting money of innocent buyers. I am looted by the [USER] even nobody is ready to help me out...,seller_complaint,0.4358944296836853,0.716039776802063,26,False,seller_complaint,,N/A,auto_handle
+557067,[USER] love the care and attention of the delivery driver if it doesn't fit the letterbox break it. #Unbelievable #badservice [URL],compliment_feedback,0.4470417499542236,0.7613147497177124,21,False,seller_complaint,,N/A,escalate
+524894,[USER] I sent in a kindle for a trade in. It was in perfect condition. Now I’m told the screen is cracked and they won’t give me the full amount. That’s a lie. I’m not going to use Amazon Trade-In again.,delivery_problem,0.2416474968194961,0.7298099994659424,41,True,return_refund,,N/A,escalate

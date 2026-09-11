@@ -240,3 +240,17 @@ device support); SpotifyCares (6,423 outbound, good completeness, but narrow dom
 
 **Trade-off**: Requires ~15 minutes of manual human labor, but restores total statistical validity to the evaluation metrics. The retrieval similarities are now realistic (0.5–0.9) and the classification metrics reflect true human alignment.
 
+---
+
+## D-17: Manual LLM Judge Agreement & Escalation Ground Truth (2026-09-11)
+
+**Decision**: Expose a secondary CLI loop (`scripts/score_cli.py`) to manually evaluate the generated replies (1-5 scale) and define ground truth for the escalation gate (Should escalate? y/n).
+
+**Rationale**: The initial evaluation reported Judge metrics and Escalation Precision as `N/A`. To compute Cohen's $\kappa$ (Judge-Human agreement) and Escalation Precision/Recall, we require explicit human judgments. Since generating replies takes time and human scoring is expensive, I advised the user that a subset of 50 items is statistically defensible for establishing inter-rater reliability (Cohen's $\kappa$).
+
+**What the results showed**:
+- **Escalation Rate Degeneration**: The live system's gate escalated 99.0% of all customer messages (198/200). The `confidence_threshold` (0.70) is extremely conservative relative to the classifier's capabilities.
+- **Cohen's $\kappa$ is Undefined**: Because 198 items were escalated, the system only auto-generated 2 draft replies. The human evaluator only had 2 items to score, making Cohen's $\kappa$ statistically impossible to compute.
+
+**Trade-off**: The manual loop required the human to read and answer "Should this escalate?" for all 200 items. However, because the system almost never auto-handles, the LLM Judge's reliability remains totally unverified. We cannot definitively trust the LLM Judge's standalone scores yet.
+
