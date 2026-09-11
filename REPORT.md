@@ -62,8 +62,8 @@ Given the *Customer Support on Twitter* dataset (Kaggle: `thoughtvector/customer
 
 | Metric | Score |
 |---|---|
-| Intent Accuracy | — |
-| Intent Macro-F1 | — |
+| Intent Accuracy | 0.1800 |
+| Intent Macro-F1 | 0.0305 |
 | Judge Score (avg) | — |
 
 ### 3.2 Simple Baseline
@@ -72,23 +72,23 @@ Given the *Customer Support on Twitter* dataset (Kaggle: `thoughtvector/customer
 
 | Metric | Score |
 |---|---|
-| Intent Accuracy | — |
-| Intent Macro-F1 | — |
+| Intent Accuracy | 0.4900 |
+| Intent Macro-F1 | 0.4934 |
 | Judge Score (avg) | — |
 
 ### 3.3 Our System
 
 | Metric | Score |
 |---|---|
-| Intent Accuracy | — |
-| Intent Macro-F1 | — |
-| Judge Score — Correctness (avg/5) | — |
-| Judge Score — Tone (avg/5) | — |
-| Judge Score — Groundedness (avg/5) | — |
-| Judge Score — Conciseness (avg/5) | — |
-| Escalation Rate | — |
-| Escalation Precision (human-verified) | — |
-| Judge–Human Cohen's κ | — |
+| Intent Accuracy | 0.4200 |
+| Intent Macro-F1 | 0.4250 |
+| Judge Score — Correctness (avg/5) | 3.10/5 |
+| Judge Score — Tone (avg/5) | 3.54/5 |
+| Judge Score — Groundedness (avg/5) | 3.22/5 |
+| Judge Score — Conciseness (avg/5) | 3.17/5 |
+| Escalation Rate | N/A |
+| Escalation Precision (human-verified) | N/A |
+| Judge–Human Cohen's κ | N/A |
 
 ---
 
@@ -144,7 +144,7 @@ Given the *Customer Support on Twitter* dataset (Kaggle: `thoughtvector/customer
 
 > This section is critical for the assignment. Be honest.
 
-**The headline metric is Intent Macro-F1 = [X]%.**
+**The headline metric is Intent Macro-F1 = 0.4250.**
 
 Here is why you should be skeptical of it:
 

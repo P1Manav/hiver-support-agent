@@ -1,4 +1,4 @@
-﻿"""
+"""
 scripts/08_judge_agreement.py
 â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 Compute judgeâ€“human agreement (Cohen's kappa) and run full evaluation.
@@ -164,7 +164,7 @@ def main():
                 "retrieved_examples": pred["retrieved_examples"],
                 "intent": pred["intent"],
             }
-            for row, pred in zip(golden_df.itertuples(), predictions)
+            for (_, row), pred in zip(golden_df.iterrows(), predictions)
         ]
         judge_results = judge.score_batch(judge_examples)
 
