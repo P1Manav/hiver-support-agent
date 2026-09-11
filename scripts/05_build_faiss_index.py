@@ -54,6 +54,17 @@ def main():
     resolved_df = pd.read_csv(resolved_path)
     console.print(f"\nLoaded {len(resolved_df):,} resolved pairs.")
 
+    # Strict Data Split: Exclude golden set to prevent retrieval leakage
+    golden_path = Path("golden/golden_set_to_label.csv")
+    if golden_path.exists():
+        golden_df = pd.read_csv(golden_path)
+        if "thread_id" in golden_df.columns:
+            drop_ids = set(golden_df["thread_id"])
+            before_len = len(resolved_df)
+            resolved_df = resolved_df[~resolved_df["thread_id"].isin(drop_ids)]
+            dropped = before_len - len(resolved_df)
+            console.print(f"[bold yellow]Dropped {dropped} examples from index build (held-out golden set).[/bold yellow]")
+
     # Embedder
     embedder = MessageEmbedder(
         model_name=emb_cfg["model"],

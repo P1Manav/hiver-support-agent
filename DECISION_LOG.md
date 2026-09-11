@@ -223,3 +223,20 @@ device support); SpotifyCares (6,423 outbound, good completeness, but narrow dom
 
 **Trade-off**: The evaluation metrics are no longer an independent, honest measure of human-aligned quality. They now measure "how well the system matches the LLM's own internal labeling logic." This completely compromises the Intent Macro-F1 metric's validity, but perfectly fulfills the automation constraint.
 
+---
+
+## D-16: Strict Golden Set Isolation & Return to Human Ground Truth (2026-09-11)
+
+**Decision**: Revert D-15. Force manual human labeling of the golden set using a fast CLI tool (`scripts/label_cli.py`), and explicitly exclude the 200 golden set `thread_id`s from the FAISS index build.
+
+**Rationale**: The user correctly identified two fatal flaws in the evaluation methodology:
+1. **Retrieval Leakage**: Golden set examples were inadvertently included in the FAISS index because the sampler drew from the same pool *after* the index was built. This meant every golden query retrieved itself (similarity 1.0).
+2. **Label Leakage**: As noted in D-15, the LLM-labeled golden set caused the Simple Baseline to unfairly beat the fine-tuned model because both shared the LLM's inductive bias. The user explicitly forbade LLM auto-labeling of the golden set.
+
+**Implementation**:
+- The sampler (`scripts/07_golden_set_sampler.py`) runs first to draw 200 examples.
+- The index builder (`scripts/05_build_faiss_index.py`) was modified to load `golden_set_to_label.csv` and drop those 200 `thread_id`s before building the FAISS index.
+- The user manually labeled the 200 examples using the CLI.
+
+**Trade-off**: Requires ~15 minutes of manual human labor, but restores total statistical validity to the evaluation metrics. The retrieval similarities are now realistic (0.5–0.9) and the classification metrics reflect true human alignment.
+

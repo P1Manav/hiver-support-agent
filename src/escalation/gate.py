@@ -107,6 +107,15 @@ class EscalationGate:
             "n_retrieved": len(retrieved_examples),
         }
 
+        # Rule 0: Non-English check
+        try:
+            from langdetect import detect
+            if detect(message) != "en":
+                triggered_rules.append("non_english")
+                reasons.append("Message appears to be non-English; requires specialized handling.")
+        except Exception:
+            pass  # Fail gracefully if message is too short or langdetect errors
+
         # Rule 1: Intent denylist (always escalate)
         if intent in self.denylist_intents:
             triggered_rules.append("denylist")

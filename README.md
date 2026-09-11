@@ -151,13 +151,16 @@ Expected output:
 ### 8. Run evaluation
 
 ```bash
-# Step 1: Sample golden set candidates
+# Step 1: Sample golden set candidates (uses initial FAISS index to find edge cases)
 python scripts/07_golden_set_sampler.py  # → golden/golden_set_to_label.csv
 
 # Step 2: Hand-label using the CLI tool (~45–80 min for 200 examples)
 python scripts/label_cli.py
 
-# Step 3: Run full evaluation
+# Step 3: Rebuild FAISS index to EXCLUDE golden set items (plugs retrieval leakage)
+python scripts/05_build_faiss_index.py
+
+# Step 4: Run full evaluation
 python scripts/08_judge_agreement.py --golden golden/golden_set.csv
 ```
 
@@ -237,9 +240,9 @@ See the **[full guide in REPORT.md](REPORT.md)** for detailed explanations.
 
 | System | Intent F1 | Reply Groundedness | Judge Score (/5) |
 |---|---|---|---|
-| Trivial baseline | — | — | — |
-| TF-IDF + NN baseline | — | — | — |
-| **Our system** | — | — | — |
+| Trivial baseline | 0.0374 | — | — |
+| TF-IDF + NN baseline | 0.5434 | — | — |
+| **Our system** | **0.5929** | 0.0025 (see note) | 2.98 (Correctness) |
 
 ---
 
