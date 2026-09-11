@@ -1,0 +1,69 @@
+{
+  "classification": {
+    "accuracy": 0.42,
+    "macro_f1": 0.4249728218747961,
+    "per_class_f1": {
+      "order_status_inquiry": 0.2909090909090909,
+      "delivery_problem": 0.38596491228070173,
+      "return_refund": 0.8,
+      "billing_payment": 0.48484848484848486,
+      "account_access": 0.4166666666666667,
+      "product_quality": 0.2777777777777778,
+      "subscription_prime": 0.41379310344827586,
+      "seller_complaint": 0.5416666666666666,
+      "app_technical": 0.5405405405405406,
+      "compliment_feedback": 0.0975609756097561
+    },
+    "classification_report": "                      precision    recall  f1-score   support\n\n      account_access       0.29      0.71      0.42         7\n       app_technical       0.59      0.50      0.54        20\n     billing_payment       0.42      0.57      0.48        14\n compliment_feedback       0.06      0.29      0.10         7\n    delivery_problem       0.50      0.31      0.39        35\norder_status_inquiry       0.42      0.22      0.29        36\n     product_quality       0.29      0.26      0.28        19\n       return_refund       0.89      0.73      0.80        22\n    seller_complaint       0.65      0.46      0.54        28\n  subscription_prime       0.35      0.50      0.41        12\n\n            accuracy                           0.42       200\n           macro avg       0.45      0.46      0.42       200\n        weighted avg       0.50      0.42      0.44       200\n"
+  },
+  "retrieval": {
+    "mean_top1_similarity": 1.0000000661611557,
+    "mean_topk_similarity": 0.7734253105819225,
+    "n_queries": 200,
+    "n_empty": 0
+  },
+  "groundedness": {
+    "mean_rouge_l": 0.0019175063212029078
+  },
+  "calibration": {
+    "bin_means": [
+      0.18742643296718597,
+      0.263597802652253,
+      0.34576747256020707,
+      0.45071345567703247,
+      0.549597981301221,
+      0.6425284014807807,
+      0.7456223856319081,
+      0.8358022272586823
+    ],
+    "bin_accs": [
+      0.0,
+      0.28888888888888886,
+      0.3541666666666667,
+      0.4791666666666667,
+      0.6363636363636364,
+      0.6111111111111112,
+      0.45454545454545453,
+      0.16666666666666666
+    ],
+    "bin_counts": [
+      "2",
+      "45",
+      "48",
+      "48",
+      "22",
+      "18",
+      "11",
+      "6"
+    ],
+    "ece": 0.0649
+  },
+  "optimal_threshold": 0.9,
+  "judge_summary": {
+    "correctness": 3.1,
+    "tone": 3.54,
+    "groundedness": 3.22,
+    "conciseness": 3.165,
+    "average": 3.25625
+  }
+}
