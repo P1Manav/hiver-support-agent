@@ -104,7 +104,7 @@ def get_cluster_samples(
     for cid in cluster_ids:
         idxs = [i for i, l in enumerate(labels) if l == cid]
         sampled = random.sample(idxs, min(n_samples, len(idxs)))
-        samples[cid] = [texts[i] for i in sampled]
+        samples[int(cid)] = [texts[i] for i in sampled]
     return samples
 
 

@@ -58,14 +58,16 @@ class TrivialBaseline:
         Evaluate on a golden set DataFrame.
 
         Args:
-            golden_df: DataFrame with columns [text, intent].
+            golden_df: DataFrame with columns [customer_text, human_intent].
 
         Returns:
             Dict with accuracy and macro_f1.
         """
         from src.evaluation.metrics import classification_metrics
 
-        y_true = golden_df["intent"].tolist()
+        # golden_set_sampler.py writes 'human_intent' (filled during labeling)
+        label_col = "human_intent" if "human_intent" in golden_df.columns else "intent"
+        y_true = golden_df[label_col].tolist()
         y_pred = [self.majority_intent] * len(y_true)
         metrics = classification_metrics(y_true, y_pred)
 

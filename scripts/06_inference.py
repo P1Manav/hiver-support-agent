@@ -1,10 +1,10 @@
-"""
+﻿"""
 scripts/06_inference.py
-────────────────────────
-End-to-end inference pipeline: classify → retrieve → escalate → generate → guardrail.
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+End-to-end inference pipeline: classify â†’ retrieve â†’ escalate â†’ generate â†’ guardrail.
 
 WHERE IT RUNS: Local (RTX 3060 Ti, Ollama must be running).
-EXPECTED LATENCY: 3–8 seconds per message (dominated by LLM generation).
+EXPECTED LATENCY: 3â€“8 seconds per message (dominated by LLM generation).
 
 PREREQS:
   - models/classifier/ (fine-tuned DistilBERT, from Colab)
@@ -140,7 +140,7 @@ def run_inference(
         # Guardrails
         _, guardrail_flags = guardrails.is_safe(draft_reply, retrieved)
     else:
-        draft_reply = "[ESCALATED — no reply generated]"
+        draft_reply = "[ESCALATED â€” no reply generated]"
 
     total_ms = int((time.time() - t0) * 1000)
 
@@ -179,7 +179,7 @@ def main():
     taxonomy, embedder, retriever, generator, classifier, guardrails, gate = load_components(
         cfg, fast_mode=args.fast_mode
     )
-    console.print("[green]✓ All components loaded[/green]\n")
+    console.print("[green]âœ“ All components loaded[/green]\n")
 
     if args.message:
         # Single message inference
@@ -225,7 +225,7 @@ def main():
             )
             result["input_text"] = msg
             results.append(result)
-            console.print(f"[{result['decision']}] {msg[:60]}... → {result['intent']} ({result['confidence']:.2%})")
+            console.print(f"[{result['decision']}] {msg[:60]}... â†’ {result['intent']} ({result['confidence']:.2%})")
 
         if args.output:
             with open(args.output, "w") as f:
@@ -238,3 +238,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

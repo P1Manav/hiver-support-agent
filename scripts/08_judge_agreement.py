@@ -1,7 +1,7 @@
-"""
+﻿"""
 scripts/08_judge_agreement.py
-──────────────────────────────
-Compute judge–human agreement (Cohen's kappa) and run full evaluation.
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+Compute judgeâ€“human agreement (Cohen's kappa) and run full evaluation.
 
 This script:
   1. Runs the LLM judge on the golden set.
@@ -19,8 +19,8 @@ PREREQS:
   - models/classifier/, faiss_index/, Ollama running
 
 OUTPUT:
-  reports/evaluation_report.json  — full metrics
-  reports/calibration.png         — confidence calibration curve
+  reports/evaluation_report.json  â€” full metrics
+  reports/calibration.png         â€” confidence calibration curve
 """
 
 import sys
@@ -60,7 +60,7 @@ console = Console()
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Full evaluation + judge–human agreement")
+    parser = argparse.ArgumentParser(description="Full evaluation + judgeâ€“human agreement")
     parser.add_argument("--config", default="config/config.yaml")
     parser.add_argument("--golden", default="golden/golden_set.csv")
     parser.add_argument("--skip-judge", action="store_true", help="Skip LLM judge (faster)")
@@ -168,14 +168,14 @@ def main():
         ]
         judge_results = judge.score_batch(judge_examples)
 
-        # Judge–human agreement (if human_judge_score present)
+        # Judgeâ€“human agreement (if human_judge_score present)
         if "human_judge_score" in golden_df.columns:
             human_scores = golden_df["human_judge_score"].dropna().astype(int).tolist()
             judge_avgs = [round(r["average"]) for r in judge_results[:len(human_scores)]]
             kappa = cohen_kappa_score(human_scores, judge_avgs)
-            console.print(f"\n[bold]Judge–Human Cohen's κ: {kappa:.3f}[/bold]")
+            console.print(f"\n[bold]Judgeâ€“Human Cohen's Îº: {kappa:.3f}[/bold]")
 
-    # ── Print Results Table ─────────────────────────────────────────────────
+    # â”€â”€ Print Results Table â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
     table = Table(title="Evaluation Results", show_lines=True)
     table.add_column("Metric", style="bold")
     table.add_column("Our System", justify="right", style="green")
@@ -183,7 +183,7 @@ def main():
     table.add_column("Simple", justify="right", style="cyan")
 
     # Run baselines if needed
-    trivial_f1, simple_f1 = "—", "—"
+    trivial_f1, simple_f1 = "â€”", "â€”"
     if not args.skip_baselines:
         tb = TrivialBaseline()
         tb.fit(golden_df["customer_text"].tolist(), y_true)
@@ -196,18 +196,18 @@ def main():
         sm = sb.evaluate(golden_df)
         simple_f1 = f"{sm['macro_f1']:.4f}"
 
-    table.add_row("Intent Accuracy", f"{clf['accuracy']:.4f}", "—", "—")
+    table.add_row("Intent Accuracy", f"{clf['accuracy']:.4f}", "â€”", "â€”")
     table.add_row("Intent Macro-F1", f"{clf['macro_f1']:.4f}", trivial_f1, simple_f1)
-    table.add_row("Mean Top-1 Similarity", f"{ret['mean_top1_similarity']:.4f}", "—", "—")
-    table.add_row("Mean Groundedness (ROUGE-L)", f"{np.mean(ground_scores):.4f}", "—", "—")
+    table.add_row("Mean Top-1 Similarity", f"{ret['mean_top1_similarity']:.4f}", "â€”", "â€”")
+    table.add_row("Mean Groundedness (ROUGE-L)", f"{np.mean(ground_scores):.4f}", "â€”", "â€”")
 
     if judge_results:
         avg_scores = {d: np.mean([r[d] for r in judge_results]) for d in ["correctness", "tone", "groundedness", "conciseness"]}
         for dim, score in avg_scores.items():
-            table.add_row(f"Judge: {dim}", f"{score:.2f}/5", "—", "—")
+            table.add_row(f"Judge: {dim}", f"{score:.2f}/5", "â€”", "â€”")
 
-    table.add_row("ECE (calibration)", f"{cal_data['ece']:.4f}", "—", "—")
-    table.add_row("Optimal threshold", f"{optimal_thresh:.3f}", "—", "—")
+    table.add_row("ECE (calibration)", f"{cal_data['ece']:.4f}", "â€”", "â€”")
+    table.add_row("Optimal threshold", f"{optimal_thresh:.3f}", "â€”", "â€”")
 
     console.print(table)
 
@@ -226,10 +226,11 @@ def main():
     with open("reports/evaluation_report.json", "w") as f:
         json.dump(report, f, indent=2, default=str)
 
-    console.print(f"\n[bold green]✓ Evaluation complete![/bold green]")
+    console.print(f"\n[bold green]âœ“ Evaluation complete![/bold green]")
     console.print(f"  Full report: reports/evaluation_report.json")
     console.print(f"  Calibration plot: {cal_plot}\n")
 
 
 if __name__ == "__main__":
     main()
+

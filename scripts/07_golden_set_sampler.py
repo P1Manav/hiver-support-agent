@@ -1,7 +1,7 @@
 """
 scripts/07_golden_set_sampler.py
-─────────────────────────────────
-Stratified sampler to build the 150–250 example golden evaluation set.
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+Stratified sampler to build the 150â€“250 example golden evaluation set.
 
 Sampling strategy (D-10):
   1. Stratified by intent: minimum 15 examples per intent (ensures uniform coverage).
@@ -23,7 +23,7 @@ PREREQS:
   - faiss_index/
 
 OUTPUT:
-  golden/golden_set_to_label.csv  — sampled examples for hand-labeling
+  golden/golden_set_to_label.csv  â€” sampled examples for hand-labeling
   (After hand-labeling, save as golden/golden_set.csv)
 """
 
@@ -72,6 +72,11 @@ def main():
     # Load messages
     messages_path = Path(processed_dir) / "customer_messages.csv"
     df = pd.read_csv(messages_path)
+    
+    # OPTIMIZATION: We only need to sample ~200 examples. Running inference
+    # on all 50,000 takes an hour. We can safely subsample 5,000 candidates first.
+    df = df.sample(n=min(5000, len(df)), random_state=42).reset_index(drop=True)
+    
     texts = df["customer_text"].fillna("").tolist()
     console.print(f"\nLoaded {len(texts):,} candidate messages.")
 
@@ -158,7 +163,7 @@ def main():
     out_path.parent.mkdir(parents=True, exist_ok=True)
     output.to_csv(out_path, index=False)
 
-    console.print(f"\n[bold green]✓ Golden set sample ready![/bold green]")
+    console.print(f"\n[bold green][OK] Golden set sample ready![/bold green]")
     console.print(f"  Total examples: {len(output):,}")
     console.print(f"  Edge cases: {output['is_edge'].sum():,} ({output['is_edge'].mean():.0%})")
     console.print(f"  Saved to: {out_path}")
@@ -171,3 +176,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

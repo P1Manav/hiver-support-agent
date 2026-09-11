@@ -214,6 +214,6 @@ def threads_to_dataframe(threads: list[dict]) -> pd.DataFrame:
             "customer_text": t["customer_text"],
             "brand_reply": t["brand_reply"],
             "n_turns": t["n_turns"],
-            "turns_json": json.dumps(t["turns"]),
+            "turns_json": json.dumps(t["turns"], default=str),
         })
     return pd.DataFrame(rows)

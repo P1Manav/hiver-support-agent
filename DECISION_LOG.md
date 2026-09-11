@@ -9,11 +9,25 @@
 
 **Decision**: Use AmazonHelp as the default brand throughout the pipeline.
 
-**Rationale**: AmazonHelp has the highest message volume in the dataset (~500k+ tweets), the best thread completeness (many customer→brand→customer chains), and covers a wide range of intents (shipping, returns, billing, account, product quality). This maximizes RAG retrieval quality and gives the classifier enough signal per class.
+**Rationale**: Verified against real data (scripts/01_brand_stats.py, 500k-row sample, 2026-09-10):
+- AmazonHelp: **42,944 outbound tweets**, 39,299 complete threads, **91.5% thread completeness**
+- AppleSupport: 15,694 outbound, 99.6% completeness
+- Uber_Support: 10,367 outbound, 98.5% completeness
 
-**Alternatives considered**: AppleSupport (good brand voice, but narrower intent range), SpotifyCares (mid-size, but many intents map to "app bug" which is hard to resolve via RAG).
+AmazonHelp has **2.7× more threads** than the next largest brand. Thread completeness at 91.5% is
+sufficient — 39,299 resolved pairs are indexed in FAISS. For a RAG system, diversity and volume of
+retrieval examples matters more than the marginal 8.5% of incomplete threads.
 
-**Trade-off**: Higher volume = longer data pipeline runtime. Mitigated by the `sample_size` config parameter.
+**Honest caveat**: The original D-01 claimed "best thread completeness" for AmazonHelp — this is
+incorrect. AppleSupport has better completeness (99.6%) but far lower volume. The real reason to
+choose AmazonHelp is **highest volume**, not completeness.
+
+**Alternatives considered**: AppleSupport (best completeness, narrower intent range — mostly
+device support); SpotifyCares (6,423 outbound, good completeness, but narrow domain); Uber_Support
+(good balance, but focused on ride-hailing which is a narrow task type).
+
+**Trade-off**: Higher volume = longer data pipeline runtime and larger FAISS index (~75 MB for
+50k×384 float32). Mitigated by the `sample_size` config parameter.
 
 ---
 
@@ -140,3 +154,50 @@
 ---
 
 *Add more decisions here as the project evolves.*
+
+---
+
+## D-14: Taxonomy vs. Cluster Reconciliation (2026-09-10)
+
+**Decision**: Keep the 10-intent taxonomy as-is; add a non-English pre-filter in `scripts/04_label_with_llm.py` to drop non-English messages before LLM labeling only (not from FAISS index).
+
+**What the real clusters showed** (KMeans k=12 over 5k AmazonHelp messages):
+
+| Cluster | Dominant theme | Taxonomy match |
+|---|---|---|
+| C0 | Price discrepancy, wrong charges | `billing_payment` ✓ |
+| C1 | Angry cancellations, double billing, account closure | `billing_payment` / `account_access` mixed |
+| C2 | **Japanese tweets** (~400 msgs) | ❌ No taxonomy intent |
+| C3 | Order not received, refund status | `order_status_inquiry` / `return_refund` mixed |
+| C4 | Seller issues, login failures | `seller_complaint` / `account_access` mixed |
+| C5 | **French/German/Spanish tweets** (~340 msgs) | ❌ No taxonomy intent |
+| C6 | Package not delivered, late/missed delivery | `delivery_problem` ✓ |
+| C7 | **Italian/Spanish + damaged packages** | ❌ non-English + `delivery_problem` mixed |
+| C8 | Packaging failures, attempted delivery | `delivery_problem` ✓ |
+| C9 | AmazonIndia, empty box, order errors | `delivery_problem` / `product_quality` |
+| C10 | Very short/ambiguous messages | Edge case (escalate) |
+| C11 | App/streaming issues, Fire TV | `app_technical` / `subscription_prime` mixed |
+
+**Key findings**:
+1. **~8% of messages are non-English** (C2: Japanese, C5: French/German, C7: Italian/Spanish fragments). The English-only LLM labeler cannot reliably classify these. They would receive garbage labels and corrupt the classifier.
+2. **`compliment_feedback` is absent** — no natural cluster emerged for positive feedback in AmazonHelp data. This confirms complaints dominate; the intent is kept in the taxonomy for robustness but will likely have low training support.
+3. **`seller_complaint` and `account_access` overlap** (C4) — semantically adjacent at embedding level. Classifier confusion between these two is expected; mitigated by their shared escalation-denylist status (both always escalate regardless of which is predicted).
+4. **Mixed clusters vs. taxonomy** — some clusters span 2 intents (C1, C3). The 12 KMeans clusters don't map 1:1 to 10 intents, but this is expected: KMeans forces a fixed k and the taxonomy reflects semantic distinctions the model was asked to learn, not purely cluster topology.
+
+**Rationale for keeping 10-intent taxonomy**:
+- The 10 intents are semantically well-motivated and align with real customer need types.
+- Changing the taxonomy to match clusters exactly would break the escalation denylist logic and require re-labeling.
+- The mismatch is in granularity (some taxonomy intents overlap in embedding space), not in correctness.
+
+**Rationale for English-only filter at labeling stage (not pipeline stage)**:
+- FAISS retrieval benefits from diversity including non-English examples (semantic embedding space is multilingual).
+- Only the *classifier training data* needs to be English-only.
+- Filtering at labeling preserves ~92% of training data while eliminating the noisy ~8%.
+
+**Alternatives considered**:
+- Add `non_english` as an 11th intent (escalation-only): rejected because it requires non-English labels to be collected and adds pipeline complexity.
+- Filter non-English at pipeline stage: rejected because it would reduce FAISS index diversity.
+- Keep taxonomy as-is with no filter: rejected because ~8% garbage-labeled training examples would hurt classifier performance on the 92% that matters.
+
+**Trade-off**: ~8% data loss in training set. Acceptable — 10k × 0.92 = 9,200 English training examples is sufficient for DistilBERT fine-tuning.
+

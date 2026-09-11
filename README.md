@@ -104,35 +104,36 @@ python scripts/02_data_pipeline.py --brand AmazonHelp --sample-size 50000
 ### 4. Build intent taxonomy
 
 ```bash
-# Embed + cluster (CPU-fine, ~5 min for 50k msgs)
+# Embed + cluster (CPU-fine, ~8 min for 5k subsample)
 python scripts/03_embed_and_cluster.py
 
-# Then open notebooks/02_intent_clustering.ipynb on Colab to inspect clusters
-# Edit config/intent_taxonomy.yaml with your final intent names
+# Inspect data/processed/cluster_samples.json to see sample messages per cluster.
+# Edit config/intent_taxonomy.yaml with your final intent names.
+# (cluster_samples.json already exists in this repo if you cloned with data)
 ```
 
 ### 5. Label training data & fine-tune classifier
 
 ```bash
-# Local: bulk-label with Ollama (slow — ~2 hrs for 10k samples; use Colab for speed)
+# Local: bulk-label with Ollama (~2 hrs for 10k samples on RTX 3060 Ti)
+# Non-English messages are automatically filtered (langdetect) — see D-14 in DECISION_LOG.md
 python scripts/04_label_with_llm.py --n-samples 10000
 
-# Colab/Kaggle: open notebooks/03_finetune_classifier.ipynb
-# Upload labeled_training.csv from data/processed/, run notebook, download model
+# Colab/Kaggle (faster, ~45 min on T4): open notebooks/03_finetune_classifier.ipynb
+# Upload data/processed/labeled_training.csv, run notebook, download models/classifier/ back
 ```
 
 ### 6. Build FAISS index
 
 ```bash
-python scripts/05_build_faiss_index.py   # ~3 min on CPU
+python scripts/05_build_faiss_index.py   # ~15 min on CPU for 50k pairs
 ```
 
 ### 7. Run end-to-end inference
 
 ```bash
 python scripts/06_inference.py \
-  --message "My order #112-3456789 hasn't arrived in 3 weeks, this is unacceptable" \
-  --brand AmazonHelp
+  --message "My order #112-3456789 hasn't arrived in 3 weeks, this is unacceptable"
 ```
 
 Expected output:
@@ -150,7 +151,13 @@ Expected output:
 ### 8. Run evaluation
 
 ```bash
-# Place your golden set at golden/golden_set.csv first (see scripts/07_golden_set_sampler.py)
+# Step 1: Sample golden set candidates
+python scripts/07_golden_set_sampler.py  # → golden/golden_set_to_label.csv
+
+# Step 2: Hand-label using the CLI tool (~45–80 min for 200 examples)
+python scripts/label_cli.py
+
+# Step 3: Run full evaluation
 python scripts/08_judge_agreement.py --golden golden/golden_set.csv
 ```
 
@@ -164,13 +171,13 @@ python scripts/08_judge_agreement.py --golden golden/golden_set.csv
 | Ollama model pulls | Local | ~20 min (10 GB) | 0 s |
 | Data pipeline (50k) | Local CPU | ~5 min | ~5 min |
 | Embed + cluster (50k) | Local CPU | ~8 min | ~8 min |
-| FAISS index build | Local CPU | ~3 min | ~3 min |
+| FAISS index build (50k pairs) | Local CPU | ~15 min | ~15 min |
 | **Single inference** | Local RTX 3060 Ti | **< 5 s** | **< 5 s** |
 | Fine-tune DistilBERT | Colab T4 | ~25 min | ~25 min |
 | Bulk LLM labeling (10k) | Colab T4 | ~45 min | ~45 min |
 | Eval harness (150 examples) | Local/Colab | ~10 min | ~10 min |
 
-> **"< 15 min after caching"** = data pipeline (5) + FAISS (3) + single inference demo (< 1) + eval on pre-built golden set (10) ≈ **19 min**. To hit the 15-min target strictly, use the pre-built golden set from `golden/golden_set.csv` (committed) and skip the fine-tune step.
+> **"< 15 min after caching"** = data pipeline (5) + FAISS (15) + single inference demo (< 1) + eval on pre-built golden set (10) ≈ **31 min** total. To reproduce the *headline result only* in < 15 min, use the pre-committed golden set and a pre-built FAISS index (skip fine-tune and re-labeling).
 
 ---
 
@@ -179,7 +186,7 @@ python scripts/08_judge_agreement.py --golden golden/golden_set.csv
 ```
 hiver-support-agent/
 ├── README.md
-├── DECISION_LOG.md          # 10+ non-obvious design decisions + rationale
+├── DECISION_LOG.md          # 14+ non-obvious design decisions + rationale
 ├── REPORT.md                # Full project report
 ├── requirements.txt         # CPU-safe pip deps
 ├── requirements_gpu.txt     # GPU-only (torch+cuda, for Colab)
@@ -187,8 +194,18 @@ hiver-support-agent/
 │   ├── config.yaml          # All tunable parameters
 │   └── intent_taxonomy.yaml # Intent names, descriptions, examples
 ├── data/                    # gitignored (raw/processed); golden/ is committed
-├── scripts/                 # Local-runnable (assume Ollama running)
-├── notebooks/               # Colab/Kaggle notebooks
+├── scripts/
+│   ├── 01_brand_stats.py    # Auto-downloads data + shows brand volume stats
+│   ├── 02_data_pipeline.py  # Full pipeline: download → threads → PII → sample
+│   ├── 03_embed_and_cluster.py  # Embed + KMeans cluster for intent discovery
+│   ├── 04_label_with_llm.py    # Bulk-label with Ollama (English-only filter included)
+│   ├── 05_build_faiss_index.py # Build FAISS index over resolved pairs
+│   ├── 06_inference.py         # End-to-end inference pipeline
+│   ├── 07_golden_set_sampler.py # Stratified sampling for golden set
+│   ├── 08_judge_agreement.py   # Full evaluation + LLM judge
+│   └── label_cli.py            # CLI hand-labeling tool for golden set
+├── notebooks/
+│   └── 03_finetune_classifier.ipynb  # DistilBERT fine-tuning (Colab T4)
 ├── src/                     # Library code
 │   ├── data/                # ingest, threads, pii
 │   ├── intents/             # embedder, clusterer, taxonomy
@@ -199,8 +216,11 @@ hiver-support-agent/
 │   ├── evaluation/          # metrics, judge, calibration
 │   └── baselines/           # trivial, simple
 ├── golden/
-│   └── golden_set.csv       # 150–250 hand-labeled examples (committed)
+│   └── golden_set.csv       # 150–250 hand-labeled examples (committed after labeling)
 └── tests/
+    ├── test_escalation.py
+    ├── test_metrics.py
+    └── test_pii.py
 ```
 
 ---
@@ -213,7 +233,7 @@ See the **[full guide in REPORT.md](REPORT.md)** for detailed explanations.
 
 ## Evaluation Results
 
-> Fill in after running `notebooks/04_eval_harness.ipynb`
+> Fill in after running `python scripts/08_judge_agreement.py --golden golden/golden_set.csv`
 
 | System | Intent F1 | Reply Groundedness | Judge Score (/5) |
 |---|---|---|---|

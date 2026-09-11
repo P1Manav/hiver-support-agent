@@ -81,8 +81,10 @@ def redact(text: str, patterns: Optional[list[str]] = None) -> str:
     Returns:
         Redacted text with PII replaced by placeholder tokens.
     """
+    if text is None:
+        return ""
     if not isinstance(text, str) or not text.strip():
-        return text
+        return text if isinstance(text, str) else ""
 
     active = patterns or list(_PATTERNS.keys())
 

@@ -135,7 +135,7 @@ class EscalationGate:
         if urgency_score >= self.urgency_threshold:
             triggered_rules.append("high_urgency")
             reasons.append(
-                f"Urgency score {urgency_score:.2f} (≥ threshold {self.urgency_threshold:.2f}); "
+                f"Urgency score {urgency_score:.2f} (>= threshold {self.urgency_threshold:.2f}); "
                 f"customer appears very distressed (sentiment: {sentiment})."
             )
 
@@ -155,8 +155,8 @@ class EscalationGate:
             reason = "ESCALATE — " + " | ".join(reasons)
         else:
             reason = (
-                f"Auto-handled: confidence {confidence:.2f} ≥ {self.confidence_threshold}; "
-                f"similarity {top_similarity:.2f} ≥ {self.similarity_threshold}; "
+                f"Auto-handled: confidence {confidence:.2f} >= {self.confidence_threshold}; "
+                f"similarity {top_similarity:.2f} >= {self.similarity_threshold}; "
                 f"intent '{intent}' not in denylist; urgency score {urgency_score:.2f} is acceptable."
             )
 

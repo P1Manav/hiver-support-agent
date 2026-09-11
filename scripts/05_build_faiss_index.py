@@ -71,7 +71,7 @@ def main():
         index_dir=index_dir,
     )
 
-    console.print(f"\n[bold green]✓ FAISS index built![/bold green]")
+    console.print(f"\n[bold green][OK] FAISS index built![/bold green]")
     console.print(f"  Vectors: {index.ntotal:,}")
     console.print(f"  Dimension: {index.d}")
     console.print(f"  Saved to: {index_dir}/")

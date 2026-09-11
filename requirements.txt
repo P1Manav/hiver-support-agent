@@ -26,7 +26,10 @@ ollama>=0.2.0               # Python client for local Ollama models
 scipy>=1.12.0               # Cohen's kappa (scipy.stats.cohen_kappa_score)
 matplotlib>=3.8.0           # Calibration plots
 seaborn>=0.13.0
+rouge-score>=0.1.2          # ROUGE-L for groundedness scoring (metrics.py)
 tabulate>=0.9.0             # Pretty-print tables in terminal
+
+langdetect>=1.0.9         # Non-English message filter (used in 04_label_with_llm.py)
 
 # ── Config & Utilities ────────────────────────────────────────────────────────
 pyyaml>=6.0.1

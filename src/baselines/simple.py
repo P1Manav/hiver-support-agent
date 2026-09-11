@@ -117,8 +117,12 @@ class SimpleBaseline:
         """Evaluate on golden set DataFrame."""
         from src.evaluation.metrics import classification_metrics
 
-        y_true = golden_df["intent"].tolist()
-        texts = golden_df["text"].tolist()
+        # golden_set_sampler.py writes 'human_intent' and 'customer_text'
+        label_col = "human_intent" if "human_intent" in golden_df.columns else "intent"
+        text_col = "customer_text" if "customer_text" in golden_df.columns else "text"
+
+        y_true = golden_df[label_col].tolist()
+        texts = golden_df[text_col].tolist()
         preds = self.pipeline.predict(texts)
         metrics = classification_metrics(y_true, preds.tolist())
 

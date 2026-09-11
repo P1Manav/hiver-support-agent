@@ -1,7 +1,7 @@
-"""
+﻿"""
 scripts/02_data_pipeline.py
-────────────────────────────
-Full data pipeline: download → filter → thread reconstruction → PII redaction → subsample → save.
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+Full data pipeline: download â†’ filter â†’ thread reconstruction â†’ PII redaction â†’ subsample â†’ save.
 
 WHERE IT RUNS: Local CPU or Colab. No GPU/Ollama needed.
 EXPECTED RUNTIME: ~5 min for 50k sample on a modern CPU.
@@ -10,9 +10,9 @@ COMMAND:
   python scripts/02_data_pipeline.py [--brand AmazonHelp] [--sample-size 50000]
 
 OUTPUT:
-  data/processed/threads.parquet      — all reconstructed threads
-  data/processed/customer_messages.csv — PII-redacted customer messages for clustering/labeling
-  data/processed/resolved_pairs.csv    — (customer_text, brand_reply) pairs for FAISS indexing
+  data/processed/threads.parquet      â€” all reconstructed threads
+  data/processed/customer_messages.csv â€” PII-redacted customer messages for clustering/labeling
+  data/processed/resolved_pairs.csv    â€” (customer_text, brand_reply) pairs for FAISS indexing
 """
 
 import sys
@@ -56,7 +56,7 @@ def main():
 
     Path(processed_dir).mkdir(parents=True, exist_ok=True)
 
-    console.print(f"\n[bold cyan]Data Pipeline[/bold cyan] — brand=[bold]{brand}[/bold], sample_size={sample_size:,}\n")
+    console.print(f"\n[bold cyan]Data Pipeline[/bold cyan] â€” brand=[bold]{brand}[/bold], sample_size={sample_size:,}\n")
 
     # Step 1: Download
     if not args.skip_download:
@@ -108,7 +108,7 @@ def main():
     console.print(f"      Saved {len(resolved_df):,} resolved pairs to {resolved_path}")
 
     # Summary
-    console.print(f"\n[bold green]✓ Data pipeline complete![/bold green]")
+    console.print(f"\n[bold green]âœ“ Data pipeline complete![/bold green]")
     console.print(f"  Threads:         {len(threads_df):,}")
     console.print(f"  Resolved pairs:  {len(resolved_df):,}")
     console.print(f"  Customer msgs:   {len(messages_df):,}")
@@ -117,3 +117,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

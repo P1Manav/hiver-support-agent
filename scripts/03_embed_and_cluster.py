@@ -1,6 +1,6 @@
-"""
+﻿"""
 scripts/03_embed_and_cluster.py
-────────────────────────────────
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 Embed customer messages and cluster to discover intent groups.
 
 WHERE IT RUNS: Local CPU (preferred) or Colab. No Ollama needed.
@@ -11,14 +11,15 @@ COMMAND:
   python scripts/03_embed_and_cluster.py [--n-sample 5000] [--method kmeans] [--n-clusters 12]
 
 OUTPUT:
-  data/processed/embeddings.npy     — (N, 384) float32 embedding matrix
-  data/processed/cluster_labels.npy — cluster label per message
-  data/processed/cluster_samples.json — 10 sample messages per cluster (for manual inspection)
-  data/processed/cluster_stats.json  — cluster size statistics
+  data/processed/embeddings.npy     â€” (N, 384) float32 embedding matrix
+  data/processed/cluster_labels.npy â€” cluster label per message
+  data/processed/cluster_samples.json â€” 10 sample messages per cluster (for manual inspection)
+  data/processed/cluster_stats.json  â€” cluster size statistics
 
 NEXT STEP:
-  Open notebooks/02_intent_clustering.ipynb on Colab for interactive inspection,
+  Inspect data/processed/cluster_samples.json directly to name the clusters,
   then edit config/intent_taxonomy.yaml with your intent names.
+  (Run scripts/03_embed_and_cluster.py to generate cluster_samples.json first.)
 """
 
 import sys
@@ -99,7 +100,7 @@ def main():
         )
         embeddings = embedder.encode(sample_texts)
         np.save(embed_path, embeddings)
-        console.print(f"Embeddings saved: {embed_path} — shape {embeddings.shape}")
+        console.print(f"Embeddings saved: {embed_path} â€” shape {embeddings.shape}")
 
     # Cluster
     console.print(f"\n[bold cyan]Clustering ({method}, k={n_clusters if method == 'kmeans' else 'auto'})...[/bold cyan]")
@@ -134,19 +135,21 @@ def main():
     table.add_column("Size", justify="right")
     table.add_column("Sample message (first of 10)")
 
-    for cid in sorted(stats["cluster_sizes"].keys()):
+    for cid in sorted(stats["cluster_sizes"].keys(), key=int):
         size = stats["cluster_sizes"][cid]
-        sample = samples.get(cid, ["(no samples)"])[0][:80] + "..."
+        # samples dict has int keys; stats may have int or str keys after JSON parse
+        sample = samples.get(int(cid), samples.get(str(cid), ["(no samples)"]))[0][:80] + "..."
         table.add_row(str(cid), str(size), sample)
 
     if stats["noise_count"] > 0:
-        table.add_row("[dim]noise[/dim]", str(stats["noise_count"]), "[dim]—[/dim]")
+        table.add_row("[dim]noise[/dim]", str(stats["noise_count"]), "[dim]â€”[/dim]")
 
     console.print(table)
-    console.print(f"\n[bold green]✓ Clustering complete![/bold green]")
-    console.print(f"  Inspect cluster_samples.json or open notebooks/02_intent_clustering.ipynb")
+    console.print(f"\n[bold green]âœ“ Clustering complete![/bold green]")
+    console.print(f"  Inspect data/processed/cluster_samples.json to see 10 samples per cluster.")
     console.print(f"  Then edit config/intent_taxonomy.yaml with your intent names.\n")
 
 
 if __name__ == "__main__":
     main()
+

@@ -3,13 +3,16 @@ scripts/01_brand_stats.py
 ──────────────────────────
 Report message count and thread completeness per brand in the dataset.
 
-Use this to pick which brand to focus on before running the full pipeline.
+Run this FIRST to pick which brand to focus on before running 02_data_pipeline.py.
+This script will download data/raw/twcs.csv automatically if it doesn't exist
+(requires ~/.kaggle/kaggle.json). Use --skip-download if the file already exists.
 
 WHERE IT RUNS: Local CPU (or Colab). No GPU/Ollama needed.
-PREREQS: Dataset downloaded at data/raw/twcs.csv (run Kaggle download first).
+PREREQS: ~/.kaggle/kaggle.json with valid API credentials.
 
 COMMAND:
   python scripts/01_brand_stats.py [--nrows 500000] [--top-n 30]
+  python scripts/01_brand_stats.py --skip-download   # if twcs.csv already exists
 
 EXPECTED OUTPUT:
   Brand stats table sorted by message count, with thread completeness %.
@@ -28,7 +31,7 @@ import pandas as pd
 from rich.console import Console
 from rich.table import Table
 
-from src.data.ingest import load_raw
+from src.data.ingest import download_dataset, load_raw
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 logger = logging.getLogger(__name__)
@@ -87,7 +90,24 @@ def main():
     parser.add_argument("--raw-dir", default="data/raw", help="Directory containing twcs.csv")
     parser.add_argument("--nrows", type=int, default=None, help="Limit rows loaded (for fast preview)")
     parser.add_argument("--top-n", type=int, default=30, help="Show top N brands")
+    parser.add_argument("--skip-download", action="store_true",
+                        help="Skip Kaggle download (use if data/raw/twcs.csv already exists)")
+    parser.add_argument("--kaggle-dataset", default="thoughtvector/customer-support-on-twitter",
+                        help="Kaggle dataset slug")
     args = parser.parse_args()
+
+    # Download if needed (this is the key fix — brand stats should be runnable before 02_data_pipeline)
+    import os
+    csv_path = os.path.join(args.raw_dir, "twcs.csv")
+    if not os.path.exists(csv_path):
+        if args.skip_download:
+            console.print(f"[red]ERROR: {csv_path} not found and --skip-download was set.[/red]")
+            console.print("[yellow]Run without --skip-download to fetch the dataset automatically.[/yellow]")
+            sys.exit(1)
+        console.print("[bold cyan]Downloading dataset from Kaggle (one-time, ~170 MB)...[/bold cyan]")
+        download_dataset(args.raw_dir, args.kaggle_dataset)
+    else:
+        console.print(f"[dim]Found existing {csv_path} — skipping download.[/dim]")
 
     console.print("\n[bold cyan]Loading dataset...[/bold cyan]")
     df = load_raw(args.raw_dir, nrows=args.nrows)
@@ -119,10 +139,10 @@ def main():
 
     # Recommendation
     best = stats.iloc[0]
-    console.print(f"\n[bold green]✓ Recommended brand: {best['brand']}[/bold green]")
+    console.print(f"\n[bold green][OK] Recommended brand: {best['brand']}[/bold green]")
     console.print(f"  {best['outbound_sent']:,} outbound tweets, "
                   f"{best['thread_completeness_pct']}% thread completeness")
-    console.print("\n[dim]Set your choice in config/config.yaml → data.brand[/dim]\n")
+    console.print("\n[dim]Set your choice in config/config.yaml -> data.brand[/dim]\n")
 
     # Save to CSV
     out_path = "data/processed/brand_stats.csv"

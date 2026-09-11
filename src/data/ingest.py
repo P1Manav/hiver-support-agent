@@ -52,6 +52,20 @@ def download_dataset(raw_dir: str, dataset: str = "thoughtvector/customer-suppor
             zf.extractall(raw_path)
         zip_path.unlink()
 
+    # Find the CSV — Kaggle may extract into a subfolder (e.g. twcs/twcs.csv)
+    if not csv_path.exists():
+        found = list(raw_path.rglob("twcs.csv"))
+        if found:
+            # Move to the flat expected location
+            import shutil
+            shutil.move(str(found[0]), str(csv_path))
+            # Clean up empty subfolder if left behind
+            try:
+                found[0].parent.rmdir()
+            except OSError:
+                pass
+            logger.info(f"Moved extracted CSV to {csv_path}")
+
     if not csv_path.exists():
         raise FileNotFoundError(
             f"Expected CSV not found at {csv_path} after download. "
@@ -82,6 +96,8 @@ def load_raw(raw_dir: str, nrows: int | None = None) -> pd.DataFrame:
         )
 
     logger.info(f"Loading raw data from {csv_path} ({'all rows' if nrows is None else f'{nrows:,} rows'})...")
+    # Note: created_at is kept as str here for speed — 2.8M rows with dateutil parsing takes ~3 min.
+    # Downstream code that needs actual datetimes can call pd.to_datetime(df['created_at']) locally.
     df = pd.read_csv(
         csv_path,
         nrows=nrows,
@@ -90,8 +106,8 @@ def load_raw(raw_dir: str, nrows: int | None = None) -> pd.DataFrame:
             "author_id": str,
             "response_tweet_id": str,
             "in_response_to_tweet_id": str,
+            "created_at": str,  # keep as string — avoids slow per-row dateutil parse
         },
-        parse_dates=["created_at"],
     )
 
     logger.info(f"Loaded {len(df):,} tweets, {df['author_id'].nunique():,} unique authors.")
@@ -112,4 +128,4 @@ def get_brand_tweets(df: pd.DataFrame, brand: str) -> pd.DataFrame:
     """
     brand_lower = brand.lower()
     mask = df["author_id"].str.lower() == brand_lower
-    return df[mask | ~mask]  # keep all; thread reconstruction filters later
+    return df[mask]  # outbound tweets from this brand only

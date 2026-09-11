@@ -26,7 +26,7 @@ Given the *Customer Support on Twitter* dataset (Kaggle: `thoughtvector/customer
 
 | Decision | Choice | Rationale |
 |---|---|---|
-| Brand | AmazonHelp | Highest volume + best thread completeness |
+| Brand | AmazonHelp | Highest volume (42,944 outbound, 2.7× next brand); 91.5% thread completeness |
 | Dataset slice | 50,000 tweets | Workable on free tier; scales via config |
 | Intent count | 10 | Manageable for hand-labeling; covers major complaint types |
 | Classifier | Fine-tuned DistilBERT | Fast CPU inference, < 50ms |

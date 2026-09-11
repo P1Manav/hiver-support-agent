@@ -1,6 +1,6 @@
-"""
+﻿"""
 scripts/04_label_with_llm.py
-──────────────────────────────
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 Bulk-label customer messages with intent labels using a local Ollama LLM.
 
 WHERE IT RUNS: Local (Ollama must be running on RTX 3060 Ti) OR Colab T4.
@@ -13,8 +13,8 @@ COMMAND:
   python scripts/04_label_with_llm.py [--n-samples 10000] [--batch-size 20]
 
 OUTPUT:
-  data/processed/labeled_training.csv  — columns: [thread_id, text, intent]
-  data/processed/labeling_stats.json   — success rate, label distribution
+  data/processed/labeled_training.csv  â€” columns: [thread_id, text, intent]
+  data/processed/labeling_stats.json   â€” success rate, label distribution
 """
 
 import sys
@@ -75,6 +75,33 @@ def main():
 
     texts = df["customer_text"].fillna("").tolist()
 
+    # Filter to English-only messages before LLM labeling.
+    # Rationale: ~8% of AmazonHelp messages are non-English (Japanese, French, German, Italian) â€”
+    # confirmed by cluster analysis (clusters C2, C5, C7 in cluster_samples.json are non-English).
+    # The LLM labeler + taxonomy are English-only; including non-English messages would produce
+    # garbage labels that corrupt the classifier training data.
+    # Decision D-14: Filter at labeling stage (not pipeline stage) to preserve FAISS index diversity.
+    try:
+        from langdetect import detect, LangDetectException
+        console.print("[dim]Filtering non-English messages (langdetect)...[/dim]")
+        is_english = []
+        for t in texts:
+            try:
+                lang = detect(t[:200])  # only check first 200 chars for speed
+                is_english.append(lang == "en")
+            except LangDetectException:
+                is_english.append(True)  # keep if detection fails (too short, etc.)
+        n_before = len(df)
+        mask = pd.Series(is_english, index=df.index)
+        df = df[mask].reset_index(drop=True)
+        texts = df["customer_text"].fillna("").tolist()
+        n_dropped = n_before - len(df)
+        console.print(f"[dim]  Kept {len(df):,} English messages, dropped {n_dropped:,} non-English "
+                      f"({n_dropped/n_before:.1%} of total).[/dim]")
+    except ImportError:
+        console.print("[yellow]Warning: langdetect not installed â€” skipping language filter. "
+                      "Run: pip install langdetect[/yellow]")
+
     console.print(f"\n[bold cyan]Labeling {len(texts):,} messages[/bold cyan]")
     console.print(f"  Model: {model}")
     console.print(f"  Batch size: {batch_size}")
@@ -113,12 +140,12 @@ def main():
     with open(stats_path, "w") as f:
         json.dump(stats, f, indent=2)
 
-    console.print(f"\n[bold green]✓ Labeling complete![/bold green]")
+    console.print(f"\n[bold green]âœ“ Labeling complete![/bold green]")
     console.print(f"  Labeled: {len(valid_df):,} / {len(texts):,} ({stats['success_rate']:.1%} success rate)")
     console.print(f"  Saved to: {output_file}")
     console.print(f"\nLabel distribution:")
     for intent, count in sorted(stats["label_distribution"].items(), key=lambda x: -x[1]):
-        bar = "█" * (count // (len(valid_df) // 50 + 1))
+        bar = "â–ˆ" * (count // (len(valid_df) // 50 + 1))
         console.print(f"  {intent:<30} {count:>5}  {bar}")
 
     console.print(f"\nNext step: Open notebooks/03_finetune_classifier.ipynb on Colab\n")
@@ -126,3 +153,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
