@@ -41,16 +41,16 @@ Given the *Customer Support on Twitter* dataset (Kaggle: `thoughtvector/customer
 
 | # | Intent Name | Description | # Training Examples | # Golden Examples |
 |---|---|---|---|---|
-| 1 | `order_status_inquiry` | Customer asking where their order is | — | — |
-| 2 | `delivery_problem` | Item damaged, wrong item, not delivered | — | — |
-| 3 | `return_refund` | Requesting return, refund, or exchange | — | — |
-| 4 | `billing_payment` | Incorrect charge, payment failure, price dispute | — | — |
-| 5 | `account_access` | Login issues, password reset, account locked | — | — |
-| 6 | `product_quality` | Item defective, not as described, broken | — | — |
-| 7 | `subscription_prime` | Prime membership issues, cancellation | — | — |
-| 8 | `seller_complaint` | Third-party seller misconduct, fraud | — | — |
-| 9 | `app_technical` | App crash, website error, technical issue | — | — |
-| 10 | `compliment_feedback` | Positive feedback, general praise | — | — |
+| 1 | `order_status_inquiry` | Customer asking where their order is | 1655 | 36 |
+| 2 | `delivery_problem` | Item damaged, wrong item, not delivered | 1360 | 35 |
+| 3 | `return_refund` | Requesting return, refund, or exchange | 352 | 22 |
+| 4 | `billing_payment` | Incorrect charge, payment failure, price dispute | 427 | 14 |
+| 5 | `account_access` | Login issues, password reset, account locked | 421 | 7 |
+| 6 | `product_quality` | Item defective, not as described, broken | 452 | 19 |
+| 7 | `subscription_prime` | Prime membership issues, cancellation | 806 | 12 |
+| 8 | `seller_complaint` | Third-party seller misconduct, fraud | 483 | 28 |
+| 9 | `app_technical` | App crash, website error, technical issue | 475 | 20 |
+| 10 | `compliment_feedback` | Positive feedback, general praise | 822 | 7 |
 
 ---
 
